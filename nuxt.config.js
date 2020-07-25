@@ -36,11 +36,6 @@ export default {
         href: '/favicon.ico',
       },
     ],
-    script: [
-      {
-        src: 'https://identity.netlify.com/v1/netlify-identity-widget.js',
-      },
-    ],
   },
   /*
    ** Global CSS
