@@ -1,6 +1,6 @@
 <template>
   <div>
-    <img :src="`images/${post.image}`" alt="" />
+    <img :src="`${post.image}`" alt="" />
     <div class="information">
       <p class="date">{{ post.date }}</p>
       <p class="content" v-html="post.content"></p>
