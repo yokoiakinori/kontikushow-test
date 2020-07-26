@@ -3,8 +3,8 @@
     <h1>ニュース</h1>
     <ul>
       <LNpost
-        v-for="post in posts"
-        :key="post.id"
+        v-for="(post, index) in posts"
+        :key="index"
         :post="post"
         class="post"
       ></LNpost>
@@ -14,23 +14,10 @@
 
 <script>
 export default {
-  data() {
-    return {
-      posts: [
-        {
-          id: 1,
-          imagepath: 'keyholder.png',
-          date: '2020/8/15',
-          content: '【夏の新作】<br>「ゲンゴロウモビール」販売開始',
-        },
-        {
-          id: 2,
-          imagepath: 'keyholder.png',
-          date: '2020/8/15',
-          content: '【夏の新作】<br>「ゲンゴロウモビール」販売開始',
-        },
-      ],
-    }
+  computed: {
+    posts() {
+      return this.$store.state.latestNews
+    },
   },
 }
 </script>

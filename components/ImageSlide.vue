@@ -54,22 +54,24 @@ export default {
 
 <style lang="scss" scoped>
 div {
-  width: 100%;
-  height: 595px;
+  width: 100vw;
+  height: 57vw;
+  max-height: 627px;
   display: flex;
   flex-flow: column;
   align-items: center;
 }
 .images {
-  width: 100vw;
+  width: 100%;
   height: 100%;
   padding: 0;
   margin: 0;
   position: relative;
   li {
     width: 100%;
+    height: 100%;
+    max-height: 627px;
     position: absolute;
-    height: 595px;
     top: 0;
     left: 0;
     background-color: gainsboro;
@@ -78,7 +80,8 @@ div {
 img {
   width: 100%;
   max-width: 1100px;
-  height: 595px;
+  height: 100%;
+  max-height: 627px;
   object-fit: cover;
   margin: auto;
   z-index: 2;
@@ -94,13 +97,5 @@ img {
     opacity: 0.5;
     margin: 7px;
   }
-}
-.v-enter-active,
-.v-leave-active {
-  transition: opacity 0.5s;
-}
-.v-enter,
-.v-leave-to {
-  opacity: 0;
 }
 </style>
