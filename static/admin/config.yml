@@ -8,6 +8,16 @@ media_folder: static/images
 public_folder: /images
 
 collections:
+  - name: 'slideimages'
+    label: 'SlideImages'
+    format: 'json'
+    folder: 'assets/content/SlideImages'
+    create: true
+    slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
+    editor:
+      preview: false
+    fields:
+      - { label: 'SlideImage', name: 'image', widget: 'image' }
   - name: 'latestnews'
     label: 'LatestNews'
     format: 'json'
