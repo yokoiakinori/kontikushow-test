@@ -2,11 +2,11 @@
   <div>
     <transition-group tag="ul" class="images">
       <li
-        v-for="image in images"
-        v-show="currentImage == image.id"
-        :key="image.id"
+        v-for="(image, index) in images"
+        v-show="currentImage == index + 1"
+        :key="index"
       >
-        <img :src="`images/${image.path}`" :alt="image.name" />
+        <img :src="`${image.image}`" alt="" />
       </li>
     </transition-group>
     <!-- <ul class="selectDot">
@@ -19,12 +19,13 @@
 export default {
   data() {
     return {
-      images: [
-        { id: 1, path: 'keyholder.png', name: 'キーホルダー' },
-        { id: 2, path: 'kumakichi2020A1943_TP_V4.jpg', name: '時計' },
-      ],
       currentImage: 1,
     }
+  },
+  computed: {
+    images() {
+      return this.$store.state.slideImage
+    },
   },
   watch: {
     currentImage() {
