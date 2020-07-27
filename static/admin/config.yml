@@ -1,6 +1,6 @@
 backend:
   name: git-gateway
-  branch: dev
+  branch: master
 
 publish_mode: editorial_workflow
 
@@ -18,5 +18,10 @@ collections:
       preview: false
     fields:
       - { label: 'Thumbnail', name: 'image', widget: 'image' }
-      - { label: 'Publish Date', name: 'date', widget: 'datetime' }
+      - {
+          label: 'Publish Date',
+          name: 'date',
+          widget: 'datetime',
+          format: 'YYYY/MM/DD',
+        }
       - { label: 'Content', name: 'content', widget: 'markdown' }
