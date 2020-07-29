@@ -1,13 +1,14 @@
 <template>
   <div class="headerBackground">
     <div class="header">
-      <div class="logo">ロゴ</div>
-      <ul v-show="!mobileCheck">
+      <Logo></Logo>
+      <ul v-if="mobileCheck">
         <li v-for="navigation in navigations" :key="navigation.id">
           <nuxt-link :to="navigation.path">{{ navigation.name }}</nuxt-link>
         </li>
+        <li class="socialIcons"><SocialIcon></SocialIcon></li>
       </ul>
-      <div class="mobileMenuWrapper" v-show="mobileCheck">
+      <div class="mobileMenuWrapper" v-else>
         <transition tag="div">
           <font-awesome-icon
             icon="bars"
@@ -48,7 +49,7 @@ export default {
   },
   computed: {
     mobileCheck() {
-      if (this.width <= 380) {
+      if (this.width > 380) {
         return true
       } else {
         return false
@@ -78,14 +79,17 @@ export default {
 .headerBackground {
   width: 100vw;
   background-color: $yellow;
-  height: 105px;
+  height: 11vw;
+  min-height: 80px;
+  max-height: 110px;
 }
 .header {
+  animation: 1s appear;
   width: 100%;
   max-width: 1100px;
   height: 100%;
   margin: auto;
-  padding: 30px;
+  padding: 0 40px 0 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -97,7 +101,7 @@ ul {
   padding: 0;
   display: flex;
   height: 100%;
-  width: 45%;
+  width: 70%;
   justify-content: space-between;
   align-items: center;
 }
@@ -115,6 +119,9 @@ li {
     }
   }
 }
+.socialIcons {
+  margin-left: 30px;
+}
 .mobileMenuWrapper {
   position: relative;
   width: 30px;
@@ -126,5 +133,10 @@ li {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+@keyframes appear {
+  0% {
+    opacity: 0;
+  }
 }
 </style>
