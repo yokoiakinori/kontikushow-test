@@ -56,6 +56,7 @@ export default {}
 <style lang="scss" scoped>
 ul {
   display: flex;
+  padding: 0;
   width: 125px;
   justify-content: space-between;
 }

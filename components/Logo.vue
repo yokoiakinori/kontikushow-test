@@ -28,9 +28,9 @@
   width: 12.5vw;
   height: 12.5vw;
   max-width: 130px;
-  min-height: 130px;
-  min-width: 90px;
-  min-height: 90px;
+  max-height: 130px;
+  min-width: 80px;
+  min-height: 80px;
   fill: $green;
   transition-duration: 0.3s;
   &:hover {

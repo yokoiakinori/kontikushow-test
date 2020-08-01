@@ -1,34 +1,44 @@
 <template>
-  <div class="headerBackground">
-    <div class="header">
-      <Logo></Logo>
-      <ul v-if="mobileCheck">
+  <div>
+    <div class="space" v-show="!mobileCheck"></div>
+    <div class="headerBackground" :class="{ mobileHeader: !mobileCheck }">
+      <div class="header">
+        <Logo></Logo>
+        <ul v-if="mobileCheck" class="Navigation">
+          <li v-for="navigation in navigations" :key="navigation.id">
+            <nuxt-link :to="navigation.path">{{ navigation.name }}</nuxt-link>
+          </li>
+          <li class="socialIcons"><SocialIcon></SocialIcon></li>
+        </ul>
+        <div class="mobileMenuWrapper" v-else>
+          <transition tag="div">
+            <font-awesome-icon
+              icon="bars"
+              style="font-size: 30px;"
+              class="mobileMenuIcon"
+              @click="menuHideAppear"
+              v-if="!mobileMenuAppear"
+              key="a"
+            />
+            <font-awesome-icon
+              icon="times"
+              style="font-size: 30px;"
+              class="mobileMenuIcon"
+              @click="menuHideAppear"
+              v-else
+              key="b"
+            />
+          </transition>
+        </div>
+      </div>
+    </div>
+    <transition>
+      <ul v-show="mobileMenuAppear && !mobileCheck" class="mobileNavigation">
         <li v-for="navigation in navigations" :key="navigation.id">
           <nuxt-link :to="navigation.path">{{ navigation.name }}</nuxt-link>
         </li>
-        <li class="socialIcons"><SocialIcon></SocialIcon></li>
       </ul>
-      <div class="mobileMenuWrapper" v-else>
-        <transition tag="div">
-          <font-awesome-icon
-            icon="bars"
-            style="font-size: 30px;"
-            class="mobileMenu"
-            @click="menuHideAppear"
-            v-if="mobileMenuAppear"
-            key="a"
-          />
-          <font-awesome-icon
-            icon="times"
-            style="font-size: 30px;"
-            class="mobileMenu"
-            @click="menuHideAppear"
-            v-else
-            key="b"
-          />
-        </transition>
-      </div>
-    </div>
+    </transition>
   </div>
 </template>
 
@@ -44,7 +54,7 @@ export default {
         { id: 5, name: 'CONTACT', path: '/contact' },
       ],
       width: Number,
-      mobileMenuAppear: true,
+      mobileMenuAppear: false,
     }
   },
   computed: {
@@ -80,7 +90,7 @@ export default {
   width: 100vw;
   background-color: $yellow;
   height: 11vw;
-  min-height: 80px;
+  min-height: 70px;
   max-height: 110px;
 }
 .header {
@@ -97,11 +107,11 @@ export default {
 .logo {
   width: 20%;
 }
-ul {
+.Navigation {
   padding: 0;
   display: flex;
   height: 100%;
-  width: 70%;
+  width: 80%;
   justify-content: space-between;
   align-items: center;
 }
@@ -120,14 +130,25 @@ li {
   }
 }
 .socialIcons {
-  margin-left: 30px;
+  margin-left: 0;
+}
+.mobileHeader {
+  position: fixed;
+  z-index: 20;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-flow: column;
+}
+.space {
+  height: 70px;
 }
 .mobileMenuWrapper {
   position: relative;
   width: 30px;
   height: 30px;
 }
-.mobileMenu {
+.mobileMenuIcon {
   color: $green;
   position: absolute;
   top: 50%;
@@ -137,6 +158,19 @@ li {
 @keyframes appear {
   0% {
     opacity: 0;
+  }
+}
+.mobileNavigation {
+  position: fixed;
+  z-index: 20;
+  background-color: $yellow;
+  display: flex;
+  flex-flow: column;
+  width: 100vw;
+  align-items: center;
+  padding: 0;
+  li {
+    height: 45px;
   }
 }
 </style>
