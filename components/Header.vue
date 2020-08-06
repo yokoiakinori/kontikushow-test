@@ -34,7 +34,11 @@
     </div>
     <transition>
       <ul v-show="mobileMenuAppear && !mobileCheck" class="mobileNavigation">
-        <li v-for="navigation in navigations" :key="navigation.id">
+        <li
+          v-for="navigation in navigations"
+          :key="navigation.id"
+          @click="menuHideAppear"
+        >
           <nuxt-link :to="navigation.path">{{ navigation.name }}</nuxt-link>
         </li>
       </ul>
@@ -116,8 +120,8 @@ export default {
   align-items: center;
 }
 li {
-  font-family: futura;
-  font-weight: medium;
+  font-family: 'futura', sans-serif;
+  font-weight: normal;
   font-size: 18px;
   font-style: italic;
   a {
