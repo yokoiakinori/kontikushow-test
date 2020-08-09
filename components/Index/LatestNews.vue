@@ -53,9 +53,10 @@ export default {
   width: 350px !important;
   flex-flow: column;
   align-items: center;
+  margin-top: 30px !important;
   h2 {
     text-align: center;
-    margin-bottom: 25px;
+    margin-bottom: 5px;
   }
   ul {
     padding: 0;

@@ -1,6 +1,6 @@
 <template>
   <div class="popularItem" :class="{ mobile: mobileCheck }">
-    <h1>人気の商品</h1>
+    <h2>人気の商品</h2>
     <ul>
       <PIpost
         v-for="post in posts"
@@ -62,6 +62,25 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.mobile {
+  width: 350px !important;
+  flex-flow: column;
+  align-items: center;
+  margin-top: 30px !important;
+  h2 {
+    text-align: center;
+    margin-bottom: 5px;
+  }
+  ul {
+    padding: 0;
+    flex-flow: column;
+    .post {
+      margin-right: 0px !important;
+      margin: 20px 0;
+      width: 220px !important;
+    }
+  }
+}
 .popularItem {
   width: 900px;
   display: flex;
@@ -71,7 +90,7 @@ export default {
     display: flex;
   }
 }
-h1 {
+h2 {
   font-size: 20px;
   color: $green;
   width: 140px;
@@ -79,6 +98,7 @@ h1 {
 }
 .post {
   margin-right: 45px;
+  width: 180px;
   &:last-child {
     margin-right: 0;
   }

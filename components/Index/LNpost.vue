@@ -25,8 +25,16 @@ img {
 }
 .mobile {
   img {
-    width: 230px;
+    width: 220px;
     height: 130px;
+  }
+  div {
+    margin-top: 10px !important;
+    margin-left: 0px !important;
+    width: 220px !important;
+  }
+  .date {
+    margin-bottom: 5px !important;
   }
 }
 .information {
@@ -42,7 +50,7 @@ img {
 }
 .content {
   font-size: 16px;
-  line-height: 29px;
+  line-height: 24px;
   text-align: left;
 }
 p {

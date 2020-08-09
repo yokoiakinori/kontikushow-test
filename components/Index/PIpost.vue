@@ -22,12 +22,12 @@ div {
   flex-flow: column;
 }
 img {
-  width: 180px;
-  height: 180px;
+  width: 100%;
+  height: auto;
   object-fit: cover;
 }
 .information {
-  width: 180px;
+  width: 100%;
   margin-top: 10px;
   display: flex;
   flex-flow: column;
