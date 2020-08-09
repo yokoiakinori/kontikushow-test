@@ -25,7 +25,7 @@ export const actions = {
       return res
     })
     const SIfiles = await require.context(
-      '~/assets/content/LatestNews',
+      '~/assets/content/SlideImages',
       false,
       /\.json$/
     )

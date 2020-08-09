@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div :class="{ mobile: mobile }">
     <img :src="`${post.image}`" alt="" />
     <div class="information">
       <p class="date">{{ post.date }}</p>
@@ -10,7 +10,7 @@
 
 <script>
 export default {
-  props: ['post'],
+  props: ['post', 'mobile'],
 }
 </script>
 
@@ -20,8 +20,14 @@ div {
 }
 img {
   width: 180px;
-  height: 110px;
+  height: 105px;
   object-fit: cover;
+}
+.mobile {
+  img {
+    width: 230px;
+    height: 130px;
+  }
 }
 .information {
   margin-left: 25px;
