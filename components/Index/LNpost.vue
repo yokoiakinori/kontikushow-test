@@ -2,8 +2,8 @@
   <div :class="{ mobile: mobile }">
     <img :src="`${post.image}`" alt="" />
     <div class="information">
-      <p class="date">{{ post.date }}</p>
-      <p class="content" v-html="post.content"></p>
+      <p class="date hiraginoP">{{ post.date }}</p>
+      <p class="baseP hiraginoP" v-html="post.content"></p>
     </div>
   </div>
 </template>
@@ -47,14 +47,5 @@ img {
   color: $green;
   font-size: 15px;
   margin-bottom: 10px;
-}
-.content {
-  font-size: 16px;
-  line-height: 24px;
-  text-align: left;
-}
-p {
-  font-family: 'Hiragino Sans';
-  font-weight: 500;
 }
 </style>

@@ -3,6 +3,7 @@
     <Header />
     <Nuxt />
     <Footer />
+    <ScrolltoTopButton />
   </div>
 </template>
 

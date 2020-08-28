@@ -35,3 +35,17 @@ collections:
           format: 'YYYY/MM/DD',
         }
       - { label: 'Content', name: 'content', widget: 'markdown' }
+  - name: 'about'
+    label: 'About'
+    format: 'json'
+    folder: 'assets/content/About'
+    create: true
+    slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
+    editor:
+      preview: false
+    fields:
+      - { label: 'MainImage', name: 'image', widget: 'image' }
+      - { label: 'Head', name: 'head', widget: 'markdown' }
+      - { label: 'Content', name: 'content', widget: 'markdown' }
+      - { label: 'Thumbnail', name: 'thumbnail', widget: 'image' }
+      - { label: 'Profile', name: 'profile', widget: 'markdown' }

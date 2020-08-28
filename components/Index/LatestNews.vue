@@ -68,10 +68,7 @@ export default {
   margin-top: 70px;
 }
 h2 {
-  font-size: 20px;
-  color: $green;
   width: 140px;
-  text-align: left;
 }
 .post {
   margin-bottom: 20px;

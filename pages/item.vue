@@ -1,5 +1,5 @@
 <template>
-  <div>itemページです</div>
+  <div class="pageMargin">itemページです</div>
 </template>
 
 <script>
