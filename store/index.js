@@ -38,18 +38,18 @@ export const actions = {
       res.slug = key.slice(2, -5)
       return res
     })
-    const Afiles = await require.context(
-      '~/assets/content/About',
-      false,
-      /\.json$/
-    )
-    const aboutPosts = SIfiles.keys().map((key) => {
-      const res = Afiles(key)
-      res.slug = key.slice(2, -5)
-      return res
-    })
+    // const Afiles = await require.context(
+    //   '~/assets/content/About',
+    //   false,
+    //   /\.json$/
+    // )
+    // const aboutPosts = SIfiles.keys().map((key) => {
+    //   const res = Afiles(key)
+    //   res.slug = key.slice(2, -5)
+    //   return res
+    // })
     await commit('setlatestNews', newsPosts)
     await commit('setslideImage', slidePosts)
-    await commit('setabout', aboutPosts)
+    // await commit('setabout', aboutPosts)
   },
 }
