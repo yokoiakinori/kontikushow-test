@@ -43,7 +43,7 @@ export const actions = {
       false,
       /\.json$/
     )
-    const aboutPosts = SIfiles.keys().map((key) => {
+    const aboutPosts = Afiles.keys().map((key) => {
       const res = Afiles(key)
       res.slug = key.slice(2, -5)
       return res

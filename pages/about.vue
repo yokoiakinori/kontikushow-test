@@ -2,11 +2,9 @@
   <div class="pageMargin wrapper">
     <div class="MainImage">ここに画像がはいります</div>
     <div class="message">
-      <h2>虫のかわいさを届けたい</h2>
+      <h2>{{ posts[0].head }}</h2>
       <p class="hiraginoP baseP">
-        「昆」虫の知識を「蓄」えながら「商」品を作る、「昆蓄商（こんちくしょう）」と申します。<br />
-        虫博士のような詳しい知識はなくても、気軽にだれでも虫たちを可愛がることができる商品を届けるのが目標です。<br />
-        かわいい商品を通して、少しでも虫たちに慣れたり好きになってもらえたら嬉しいです。
+        {{ posts[0].content }}
       </p>
     </div>
     <div class="profile">
@@ -36,23 +34,34 @@ export default {
       },
     }
   },
+  computed: {
+    posts() {
+      return this.$store.state.about
+    },
+  },
 }
 </script>
 
 <style lang="scss" scoped>
 .wrapper {
-  width: 600px;
+  max-width: 600px;
+  width: 80vw;
   display: flex;
   flex-flow: column;
 }
 .MainImage {
   background-color: gray;
   width: 100%;
-  height: 420px;
+  height: 56vw;
+  max-height: 420px;
 }
 .message {
   margin-top: 20px;
   margin-bottom: 100px;
+  p {
+    white-space: pre-line;
+    word-wrap: break-word;
+  }
 }
 h2 {
   margin-bottom: 25px;
@@ -60,7 +69,7 @@ h2 {
 .profile {
   display: flex;
   img {
-    width: 180px;
+    width: 30%;
     height: auto;
     object-fit: cover;
     border-radius: 50%;
