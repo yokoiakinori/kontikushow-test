@@ -54,8 +54,8 @@ h2 {
 .profile {
   display: flex;
   img {
-    width: 30%;
-    height: auto;
+    width: 180px;
+    height: 180px;
     object-fit: cover;
     border-radius: 50%;
   }
