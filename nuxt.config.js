@@ -61,7 +61,11 @@ export default {
   /*
    ** Nuxt.js modules
    */
-  modules: ['@nuxtjs/style-resources', 'nuxt-fontawesome'],
+  modules: [
+    '@nuxtjs/style-resources',
+    'nuxt-fontawesome',
+    '@nuxtjs/markdownit',
+  ],
   styleResources: {
     scss: ['~/assets/sass/variables.scss'],
   },
@@ -72,6 +76,9 @@ export default {
         icons: ['fas'],
       },
     ],
+  },
+  markdownit: {
+    injected: true,
   },
   /*
    ** Build configuration

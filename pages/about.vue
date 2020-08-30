@@ -1,20 +1,15 @@
 <template>
   <div class="pageMargin wrapper">
-    <div class="MainImage">ここに画像がはいります</div>
+    <img :src="`${posts[0].image}`" alt="" class="MainImage" />
     <div class="message">
       <h2>{{ posts[0].head }}</h2>
-      <p class="hiraginoP baseP">
-        {{ posts[0].content }}
-      </p>
+      <div v-html="$md.render(posts[0].content)"></div>
     </div>
     <div class="profile">
-      <img :src="`images/${profile.imagepath}`" alt="" />
-      <div>
+      <img :src="`${posts[0].thumbnail}`" alt="" />
+      <div class="information">
         <h3>プロフィール</h3>
-        <p class="hiraginoP baseP">
-          名前：ウーニ<br />
-          岩手県在住。短大のデザイン科を卒業しデザイン系の仕事をしています。ゲンゴロウ数種ととカブトムシを飼育。好きな昆虫はナミゲンゴロウ。
-        </p>
+        <div v-html="$md.render(posts[0].profile)"></div>
       </div>
     </div>
   </div>
@@ -25,13 +20,6 @@ export default {
   head() {
     return {
       title: 'ABOUT',
-    }
-  },
-  data() {
-    return {
-      profile: {
-        imagepath: 'IMG_4598.jpg',
-      },
     }
   },
   computed: {
@@ -54,14 +42,11 @@ export default {
   width: 100%;
   height: 56vw;
   max-height: 420px;
+  object-fit: cover;
 }
 .message {
   margin-top: 20px;
   margin-bottom: 100px;
-  p {
-    white-space: pre-line;
-    word-wrap: break-word;
-  }
 }
 h2 {
   margin-bottom: 25px;
@@ -74,11 +59,11 @@ h2 {
     object-fit: cover;
     border-radius: 50%;
   }
-  div {
-    margin-left: 30px;
-    h3 {
-      margin-bottom: 20px;
-    }
+  h3 {
+    margin-bottom: 20px;
   }
+}
+.information {
+  margin-left: 30px;
 }
 </style>

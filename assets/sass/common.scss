@@ -26,19 +26,11 @@ h3 {
 }
 
 p {
-  font-family: "游ゴシック体", YuGothic, "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック", "Yu Gothic", "メイリオ", sans-serif;
-
-}
-
-.baseP {
-  font-size: 15px;
-  line-height: 28px;
-  text-align: left;
-}
-
-.hiraginoP {
-  font-family: 'Hiragino Sans';
-  font-weight: 500;
+  font-family: 'Hiragino Sans' !important;
+  font-weight: 500 !important;
+  font-size: 15px !important;
+  line-height: 28px !important;
+  text-align: left !important;
 }
 
 .v-enter-active,
