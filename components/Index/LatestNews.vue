@@ -23,6 +23,7 @@ export default {
   computed: {
     mobileCheck() {
       if (this.width > 380) {
+        //
         return false
       } else {
         return true
