@@ -46,9 +46,9 @@ export default {
 .message {
   margin-top: 20px;
   margin-bottom: 100px;
-}
-h2 {
-  margin-bottom: 25px;
+  /deep/ h2 {
+    margin-bottom: 25px;
+  }
 }
 .profile {
   display: flex;
