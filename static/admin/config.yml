@@ -45,7 +45,6 @@ collections:
       preview: false
     fields:
       - { label: 'MainImage', name: 'image', widget: 'image' }
-      - { label: 'Head', name: 'head', widget: 'markdown' }
       - { label: 'Content', name: 'content', widget: 'markdown' }
       - { label: 'Thumbnail', name: 'thumbnail', widget: 'image' }
       - { label: 'Profile', name: 'profile', widget: 'markdown' }

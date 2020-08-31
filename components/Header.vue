@@ -93,7 +93,7 @@ export default {
 .headerBackground {
   width: 100vw;
   background-color: $yellow;
-  height: 11vw;
+  height: 9vw;
   min-height: 70px;
   max-height: 110px;
 }
@@ -109,20 +109,20 @@ export default {
   align-items: center;
 }
 .logo {
-  width: 20%;
+  width: 32%;
 }
 .Navigation {
   padding: 0;
   display: flex;
   height: 100%;
-  width: 80%;
+  width: 68%;
   justify-content: space-between;
   align-items: center;
 }
 li {
   font-family: 'futura', sans-serif;
   font-weight: normal;
-  font-size: 18px;
+  font-size: 17px;
   font-style: italic;
   a {
     color: $green;
@@ -134,7 +134,7 @@ li {
   }
 }
 .socialIcons {
-  margin-left: 0;
+  margin-left: 25px;
 }
 .mobileHeader {
   position: fixed;
