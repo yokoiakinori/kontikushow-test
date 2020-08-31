@@ -2,7 +2,6 @@
   <div class="pageMargin wrapper">
     <img :src="`${posts[0].image}`" alt="" class="MainImage" />
     <div class="message">
-      <h2>{{ posts[0].head }}</h2>
       <div v-html="$md.render(posts[0].content)"></div>
     </div>
     <div class="profile">
