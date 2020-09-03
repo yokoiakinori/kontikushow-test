@@ -104,6 +104,8 @@ export default {
       params.append('form-name', 'contact')
       params.append('username', this.username)
       params.append('useremail', this.useremail)
+      params.append('subject', this.subject)
+      params.append('message', this.message)
       if (this.botField) {
         params.append('bot-field', this.botField)
       }
