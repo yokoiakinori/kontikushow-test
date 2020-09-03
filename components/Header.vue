@@ -94,8 +94,8 @@ export default {
   width: 100vw;
   background-color: $yellow;
   height: 9vw;
-  min-height: 70px;
-  max-height: 110px;
+  min-height: 60px;
+  max-height: 95px;
 }
 .header {
   animation: 1s appear;
@@ -145,7 +145,7 @@ li {
   flex-flow: column;
 }
 .space {
-  height: 70px;
+  height: 60px;
 }
 .mobileMenuWrapper {
   position: relative;

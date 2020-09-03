@@ -30,12 +30,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.wrapper {
-  max-width: 600px;
-  width: 80vw;
-  display: flex;
-  flex-flow: column;
-}
+$thumbnailWidth: 180px;
 .MainImage {
   background-color: gray;
   width: 100%;
@@ -44,7 +39,7 @@ export default {
   object-fit: cover;
 }
 .message {
-  margin-top: 20px;
+  margin-top: 35px;
   margin-bottom: 100px;
   /deep/ h2 {
     margin-bottom: 25px;
@@ -53,8 +48,8 @@ export default {
 .profile {
   display: flex;
   img {
-    width: 180px;
-    height: 180px;
+    width: $thumbnailWidth;
+    height: $thumbnailWidth;
     object-fit: cover;
     border-radius: 50%;
   }

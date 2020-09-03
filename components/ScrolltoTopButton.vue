@@ -37,16 +37,20 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 button {
   background-color: $yellow;
   width: 5vw;
   height: 5vw;
+  max-width: 60px;
+  max-height: 60px;
+  min-width: 40px;
+  min-height: 40px;
   border: none;
   border-radius: 50%;
   position: fixed;
-  bottom: 2vw;
-  right: 2vw;
+  bottom: 15px;
+  right: 15px;
   z-index: 20;
   color: $green;
   font-size: 23px;

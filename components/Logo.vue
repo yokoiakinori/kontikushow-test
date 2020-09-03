@@ -25,10 +25,11 @@
 .KontikushowLogo {
   animation: 1s appear;
   margin: 0;
+  margin-left: 10px;
   width: 10vw;
   height: 10vw;
-  max-width: 130px;
-  max-height: 130px;
+  max-width: 120px;
+  max-height: 120px;
   min-width: 80px;
   min-height: 80px;
   fill: $green;

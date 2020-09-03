@@ -49,3 +49,10 @@ p {
   margin-right: auto;
   margin-bottom: 100px;
 }
+
+.wrapper {
+  max-width: 600px;
+  width: 80vw;
+  display: flex;
+  flex-flow: column;
+}
