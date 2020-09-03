@@ -92,7 +92,7 @@ export default {
       this.isSending = true
       this.completeMessage = '送信処理中…'
       const params = new URLSearchParams()
-      const path = new URL()
+      const path = new URL(window.location)
       params.append('form-name', 'contact')
       params.append('username', this.username)
       params.append('useremail', this.useremail)
