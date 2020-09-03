@@ -43,7 +43,7 @@
       </label>
       <label for=""
         ><p>メッセージ</p>
-        <textarea name="" id="" cols="30" rows="10"></textarea>
+        <textarea name="message" id="" cols="30" rows="10"></textarea>
       </label>
       <p class="note">*必須事項です。</p>
       <div class="p-contact__item" v-show="false">
