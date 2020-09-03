@@ -65,6 +65,7 @@ export default {
     '@nuxtjs/style-resources',
     'nuxt-fontawesome',
     '@nuxtjs/markdownit',
+    '@nuxtjs/axios',
   ],
   styleResources: {
     scss: ['~/assets/sass/variables.scss'],
