@@ -92,6 +92,7 @@ export default {
       this.isSending = true
       this.completeMessage = '送信処理中…'
       const params = new URLSearchParams()
+      const path = new URL()
       params.append('form-name', 'contact')
       params.append('username', this.username)
       params.append('useremail', this.useremail)
@@ -99,7 +100,7 @@ export default {
         params.append('bot-field', this.botField)
       }
       this.$axios
-        .$post('/', params)
+        .$post(path, params)
         .then(() => {
           this.completeMessage = 'お問い合わせを送信しました！'
           this.resetForm()
