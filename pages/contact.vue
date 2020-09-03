@@ -25,7 +25,7 @@
         rules="required|max:100"
         name="お名前"
       >
-        <input type="text" name="userName" id="" v-model="username" />
+        <input type="text" name="username" id="" v-model="username" />
         <p v-show="errors.length" class="p-contact__error">{{ errors[0] }}</p>
       </validation-provider>
       <label for="useremail"><p>メールアドレス*</p> </label>
@@ -37,13 +37,19 @@
         <input type="text" name="useremail" id="" v-model="useremail" />
         <p v-show="errors.length" class="p-contact__error">{{ errors[0] }}</p>
       </validation-provider>
-      <label for=""
+      <label for="subject"
         ><p>件名</p>
-        <input type="text" name="subject" id="" />
+        <input type="text" name="subject" id="" v-model="subject" />
       </label>
       <label for=""
         ><p>メッセージ</p>
-        <textarea name="message" id="" cols="30" rows="10"></textarea>
+        <textarea
+          name="message"
+          id=""
+          cols="30"
+          rows="10"
+          v-model="message"
+        ></textarea>
       </label>
       <p class="note">*必須事項です。</p>
       <div class="p-contact__item" v-show="false">
@@ -68,6 +74,8 @@ export default {
     return {
       username: '',
       useremail: '',
+      subject: '',
+      message: '',
       botField: '',
       isSubmit: false,
       isSending: false,
