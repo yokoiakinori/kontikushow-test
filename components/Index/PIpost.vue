@@ -1,6 +1,6 @@
 <template>
   <div>
-    <nuxt-link to="#">
+    <nuxt-link to="#" class="imageLink">
       <img :src="`images/${post.imagepath}`" alt="" />
     </nuxt-link>
     <div class="information">
@@ -48,11 +48,6 @@ a {
   font-weight: 500;
   color: $green;
   font-size: 13px;
-  transition-duration: 0.3s;
-  &:hover {
-    opacity: 0.7;
-    transition-duration: 0.3s;
-  }
 }
 p {
   font-family: 'Hiragino Sans';

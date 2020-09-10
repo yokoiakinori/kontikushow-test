@@ -1,7 +1,11 @@
-li {
-  list-style: none;
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+}
+
+li {
+  list-style: none;
 }
 
 a {
@@ -33,6 +37,25 @@ p {
   text-align: left !important;
 }
 
+.shadebutton {
+  height: 45px;
+  font-size: 17px !important;
+  font-family: 'Hiragino Sans' !important;
+  font-weight: 600 !important;
+  border-radius: 5px;
+  background-color: white;
+  color: $green;
+  border: solid 1.5px $green;
+  transition-duration: 0.3s;
+  box-shadow: 3px 3px rgba($green, 0.3);
+
+  &:hover {
+    background-color: $green;
+    color: white;
+    transition-duration: 0.3s;
+  }
+}
+
 .v-enter-active,
 .v-leave-active {
   transition: opacity 0.5s;
@@ -55,4 +78,13 @@ p {
   width: 80vw;
   display: flex;
   flex-flow: column;
+}
+
+.imageLink {
+  transition-duration: 0.3s;
+
+  &:hover {
+    opacity: 0.7;
+    transition-duration: 0.3s;
+  }
 }

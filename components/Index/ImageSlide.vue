@@ -75,7 +75,7 @@ div {
     position: absolute;
     top: 0;
     left: 0;
-    background-color: gainsboro;
+    background-color: rgba($color: $yellow, $alpha: 0.5);
   }
 }
 img {

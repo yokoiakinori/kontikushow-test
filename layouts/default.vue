@@ -3,9 +3,41 @@
     <Header />
     <Nuxt />
     <Footer />
-    <ScrolltoTopButton />
+    <ScrolltoTopButton v-if="mobileCheck" />
   </div>
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      width: Number,
+    }
+  },
+  computed: {
+    mobileCheck() {
+      if (this.width > 380) {
+        return true
+      } else {
+        return false
+      }
+    },
+  },
+  methods: {
+    handleReisize() {
+      if (process.client) {
+        this.width = window.innerWidth
+      }
+    },
+  },
+  mounted() {
+    window.addEventListener('resize', this.handleReisize)
+  },
+  created() {
+    this.handleReisize()
+  },
+}
+</script>
 
 <style>
 html {

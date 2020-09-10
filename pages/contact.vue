@@ -22,7 +22,7 @@
       </label>
       <validation-provider
         v-slot="{ errors }"
-        rules="required|max:100"
+        rules="required|max:30"
         name="お名前"
       >
         <input type="text" name="username" id="" v-model="username" />
@@ -37,12 +37,17 @@
         <input type="text" name="useremail" id="" v-model="useremail" />
         <p v-show="errors.length" class="p-contact__error">{{ errors[0] }}</p>
       </validation-provider>
-      <label for="subject"
-        ><p>件名</p>
+      <label for="subject"><p>件名</p> </label>
+      <validation-provider v-slot="{ errors }" rules="max:30" name="件名">
         <input type="text" name="subject" id="" v-model="subject" />
-      </label>
-      <label for=""
-        ><p>メッセージ</p>
+        <p v-show="errors.length" class="p-contact__error">{{ errors[0] }}</p>
+      </validation-provider>
+      <label for="message"><p>メッセージ</p> </label>
+      <validation-provider
+        v-slot="{ errors }"
+        rules="max:400"
+        name="メッセージ"
+      >
         <textarea
           name="message"
           id=""
@@ -50,15 +55,25 @@
           rows="10"
           v-model="message"
         ></textarea>
-      </label>
+        <p v-show="errors.length" class="p-contact__error">{{ errors[0] }}</p>
+      </validation-provider>
       <p class="note">*必須事項です。</p>
       <div class="p-contact__item" v-show="false">
         <label for="message">スパムでない場合は空欄</label>
         <input type="text" name="bot-field" v-model="botField" />
       </div>
       <div>
-        <button type="submit" :disabled="invalid || !validated">送 信</button>
+        <button
+          type="submit"
+          :disabled="invalid || !validated"
+          class="shadebutton"
+        >
+          送 信
+        </button>
       </div>
+      <transition>
+        <h2 class="sendingMessage" v-show="isSending">{{ completeMessage }}</h2>
+      </transition>
     </validation-observer>
   </div>
 </template>
@@ -171,21 +186,6 @@ form {
     justify-content: center;
     button {
       width: 200px;
-      height: 45px;
-      font-size: 17px !important;
-      font-family: 'Hiragino Sans' !important;
-      font-weight: 600 !important;
-      border-radius: 5px;
-      background-color: white;
-      color: $green;
-      border: solid 1.5px $green;
-      transition-duration: 0.3s;
-      box-shadow: 3px 3px rgba($green, 0.3);
-      &:hover {
-        background-color: $green;
-        color: white;
-        transition-duration: 0.3s;
-      }
     }
   }
 }
