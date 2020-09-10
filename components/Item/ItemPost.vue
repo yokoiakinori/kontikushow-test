@@ -1,6 +1,6 @@
 <template>
   <div>
-    <nuxt-link to="" class="imageLink"
+    <nuxt-link to="#" class="imageLink"
       ><img :src="`images/${post.imagepath}`" alt=""
     /></nuxt-link>
     <p>{{ post.name }}</p>
@@ -17,6 +17,7 @@ export default {
 div {
   width: 77%;
   height: 35vw;
+  max-height: 350px;
   display: flex;
   flex-flow: column;
 }
