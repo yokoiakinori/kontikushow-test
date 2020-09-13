@@ -119,18 +119,16 @@ export default {
   justify-content: space-between;
   align-items: center;
 }
-li {
-  font-family: 'futura', sans-serif;
-  font-weight: normal;
-  font-size: 17px;
-  font-style: italic;
-  a {
-    color: $green;
+a {
+  font-family: 'futura', sans-serif !important;
+  font-weight: normal !important;
+  font-size: 17px !important;
+  font-style: italic !important;
+  color: $green;
+  transition-duration: 0.3s;
+  &:hover {
+    color: rgba($green, 0.5);
     transition-duration: 0.3s;
-    &:hover {
-      color: rgba($green, 0.5);
-      transition-duration: 0.3s;
-    }
   }
 }
 .socialIcons {

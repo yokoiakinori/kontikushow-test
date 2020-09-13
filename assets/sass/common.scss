@@ -9,7 +9,10 @@ li {
 }
 
 a {
+  font-family: 'Hiragino Sans' !important;
+  font-weight: 500 !important;
   text-decoration: none;
+  color: black;
 }
 
 h1,
@@ -32,9 +35,13 @@ h3 {
 p {
   font-family: 'Hiragino Sans' !important;
   font-weight: 500 !important;
-  font-size: 15px !important;
-  line-height: 28px !important;
-  text-align: left !important;
+  font-size: 15px;
+  line-height: 28px;
+  text-align: left;
+}
+
+img {
+  object-fit: cover;
 }
 
 .shadebutton {

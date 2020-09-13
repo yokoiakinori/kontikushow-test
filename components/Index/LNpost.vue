@@ -21,7 +21,6 @@ div {
 img {
   width: 180px;
   height: 105px;
-  object-fit: cover;
 }
 .mobile {
   img {

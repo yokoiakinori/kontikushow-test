@@ -1,9 +1,11 @@
 <template>
   <div>
-    <nuxt-link to="#" class="imageLink"
+    <nuxt-link :to="`/item/${post.id}`" class="imageLink"
       ><img :src="`images/${post.imagepath}`" alt=""
     /></nuxt-link>
-    <p>{{ post.name }}</p>
+    <nuxt-link :to="`/item/${post.id}`"
+      ><p>{{ post.name }}</p></nuxt-link
+    >
   </div>
 </template>
 

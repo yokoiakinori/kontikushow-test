@@ -24,7 +24,6 @@ div {
 img {
   width: 100%;
   height: auto;
-  object-fit: cover;
 }
 .information {
   width: 100%;
