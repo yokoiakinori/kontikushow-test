@@ -1,9 +1,13 @@
 <template>
   <div class="pageMargin">
     <ul>
-      <li v-for="post in posts" :key="post.id">
+      <li v-for="(post, index) in posts" :key="index">
         <transition
-          ><ItemPost :post="post" v-if="post.id <= appearItem"></ItemPost
+          ><ItemPost
+            :post="post"
+            :index="index"
+            v-if="index < appearItem"
+          ></ItemPost
         ></transition>
       </li>
     </ul>
@@ -20,65 +24,16 @@ export default {
   },
   data() {
     return {
-      posts: [
-        {
-          id: 1,
-          imagepath: 'IMG_4598.jpg',
-          name: '【夏限定】ゲンゴロウ木製キーホルダー',
-        },
-        {
-          id: 2,
-          imagepath: 'IMG_4598.jpg',
-          name: '【夏限定】ゲンゴロウ木製キーホルダー',
-        },
-        {
-          id: 3,
-          imagepath: 'IMG_4598.jpg',
-          name: '【夏限定】ゲンゴロウ木製キーホルダー',
-        },
-        {
-          id: 4,
-          imagepath: 'IMG_4598.jpg',
-          name: '【夏限定】ゲンゴロウ木製キーホルダー',
-        },
-        {
-          id: 5,
-          imagepath: 'IMG_4598.jpg',
-          name: '【夏限定】ゲンゴロウ木製キーホルダー',
-        },
-        {
-          id: 6,
-          imagepath: 'IMG_4598.jpg',
-          name: '【夏限定】ゲンゴロウ木製キーホルダー',
-        },
-        {
-          id: 7,
-          imagepath: 'IMG_4598.jpg',
-          name: '【夏限定】ゲンゴロウ木製キーホルダー',
-        },
-        {
-          id: 8,
-          imagepath: 'IMG_4598.jpg',
-          name: '【夏限定】ゲンゴロウ木製キーホルダー',
-        },
-        {
-          id: 9,
-          imagepath: 'IMG_4598.jpg',
-          name: '【夏限定】ゲンゴロウ木製キーホルダー',
-        },
-        {
-          id: 10,
-          imagepath: 'IMG_4598.jpg',
-          name: '【夏限定】ゲンゴロウ木製キーホルダー',
-        },
-      ],
-
       appearColumn: 1,
     }
   },
   computed: {
     appearItem() {
       return this.appearColumn * 3
+    },
+
+    posts() {
+      return this.$store.state.item
     },
   },
   methods: {

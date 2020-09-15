@@ -1,19 +1,25 @@
 <template>
   <div class="pageMargin">
     <div class="images">
-      <img
-        :src="`../images/${currentItem.images[currentImage]}`"
-        alt=""
-        class="currentImage"
-      />
+      <img :src="`..${currentImage}`" alt="" class="currentImage" />
       <ul>
         <img
-          v-for="(image, index) in currentItem.images"
-          :key="index"
-          :src="`../images/${image}`"
+          :src="`..${currentItem.image1}`"
           alt=""
           class="listImage imageLink"
-          @click="toggleImage(index)"
+          @click="toggleImage('image1')"
+        />
+        <img
+          :src="`..${currentItem.image2}`"
+          alt=""
+          class="listImage imageLink"
+          @click="toggleImage('image2')"
+        />
+        <img
+          :src="`..${currentItem.image3}`"
+          alt=""
+          class="listImage imageLink"
+          @click="toggleImage('image3')"
         />
       </ul>
     </div>
@@ -23,9 +29,9 @@
       <nuxt-link :to="`${currentItem.shopurl}`" class="shopLink"
         >販売サイト(BOOTH)へ</nuxt-link
       >
-      <p class="itemInfo">商品説明： <br />{{ currentItem.iteminfo }}</p>
+      <p class="itemInfo">商品説明： <br />{{ currentItem.info }}</p>
       <p class="specification">
-        商品仕様： <br />{{ currentItem.itemspecification }}
+        商品仕様： <br />{{ currentItem.specification }}
       </p>
     </div>
   </div>
@@ -40,45 +46,13 @@ export default {
   },
   data() {
     return {
-      items: [
-        {
-          id: 1,
-          name: '【夏限定】ゲンゴロウ木製キーホルダー',
-          price: '￥600',
-          shopurl: '#',
-          iteminfo:
-            '岩手県在住。短大のデザイン科を卒業しデザイン系の仕事をしています。ゲンゴロウ数種ととカブトムシを飼育。好きな昆虫はナミゲンゴロウ。',
-          itemspecification: '寸法　幅10mm×奥行10mm×高さ6mm',
-          images: ['1.jpg', '2.jpg', '3.jpg'],
-        },
-        {
-          id: 2,
-          name: '【夏限定】ゲンゴロウ木製キーホルダー',
-          price: '￥600',
-          shopurl: '#',
-          iteminfo:
-            '岩手県在住。短大のデザイン科を卒業しデザイン系の仕事をしています。ゲンゴロウ数種ととカブトムシを飼育。好きな昆虫はナミゲンゴロウ。',
-          itemspecification: '寸法　幅10mm×奥行10mm×高さ6mm',
-          images: ['1.jpg', '2.jpg', '3.jpg'],
-        },
-        {
-          id: 3,
-          name: '【夏限定】ゲンゴロウ木製キーホルダー',
-          price: '￥600',
-          shopurl: '#',
-          iteminfo:
-            '岩手県在住。短大のデザイン科を卒業しデザイン系の仕事をしています。ゲンゴロウ数種ととカブトムシを飼育。好きな昆虫はナミゲンゴロウ。',
-          itemspecification: '寸法　幅10mm×奥行10mm×高さ6mm',
-          images: ['1.jpg', '2.jpg', '3.jpg'],
-        },
-      ],
       currentItem: Object,
-      currentImage: 0,
+      currentImage: String,
     }
   },
   computed: {
-    currentItemNo() {
-      return this.$route.params.id - 1
+    posts() {
+      return this.$store.state.item
     },
     titleString() {
       return this.currentItem.name
@@ -86,11 +60,18 @@ export default {
   },
   methods: {
     toggleImage(number) {
-      this.currentImage = number
+      if (number === 'image1') {
+        this.currentImage = this.currentItem.image1
+      } else if (number === 'image2') {
+        this.currentImage = this.currentItem.image2
+      } else if (number === 'image3') {
+        this.currentImage = this.currentItem.image3
+      }
     },
   },
   created() {
-    this.currentItem = this.items[this.currentItemNo]
+    this.currentItem = this.posts[this.$route.params.id]
+    this.currentImage = this.posts[this.$route.params.id].image1
   },
 }
 </script>

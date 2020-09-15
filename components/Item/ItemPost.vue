@@ -1,9 +1,9 @@
 <template>
   <div>
-    <nuxt-link :to="`/item/${post.id}`" class="imageLink"
-      ><img :src="`images/${post.imagepath}`" alt=""
+    <nuxt-link :to="`/item/${index}`" class="imageLink"
+      ><img :src="`${post.image1}`" alt=""
     /></nuxt-link>
-    <nuxt-link :to="`/item/${post.id}`"
+    <nuxt-link :to="`/item/${index}`"
       ><p>{{ post.name }}</p></nuxt-link
     >
   </div>
@@ -11,7 +11,7 @@
 
 <script>
 export default {
-  props: ['post'],
+  props: ['post', 'index'],
 }
 </script>
 

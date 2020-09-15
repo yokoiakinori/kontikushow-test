@@ -2,6 +2,7 @@ export const state = () => ({
   slideImage: [],
   latestNews: [],
   about: [],
+  item: [],
 })
 
 export const mutations = {
@@ -13,6 +14,9 @@ export const mutations = {
   },
   setabout(state, list) {
     state.about = list
+  },
+  setitem(state, list) {
+    state.item = list
   },
 }
 
@@ -48,8 +52,19 @@ export const actions = {
       res.slug = key.slice(2, -5)
       return res
     })
+    const Ifiles = await require.context(
+      '~/assets/content/Item',
+      false,
+      /\.json$/
+    )
+    const itemPosts = Ifiles.keys().map((key) => {
+      const res = Ifiles(key)
+      res.slug = key.slice(2, -5)
+      return res
+    })
     await commit('setlatestNews', newsPosts)
     await commit('setslideImage', slidePosts)
     await commit('setabout', aboutPosts)
+    await commit('setitem', itemPosts)
   },
 }
