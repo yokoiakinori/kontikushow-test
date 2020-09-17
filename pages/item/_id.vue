@@ -25,7 +25,7 @@
     </div>
     <div class="information">
       <h2>{{ currentItem.name }}</h2>
-      <p class="price">{{ currentItem.price }}<span>（税込）</span></p>
+      <p class="price">¥{{ currentItem.price }}<span>（税込）</span></p>
       <nuxt-link :to="`${currentItem.shopurl}`" class="shopLink"
         >販売サイト(BOOTH)へ</nuxt-link
       >
@@ -93,12 +93,14 @@ div {
 .currentImage {
   width: 100%;
   height: 30vw;
+  max-height: 350px;
   margin-bottom: 2.55vw;
   transition-duration: 0.3s;
 }
 .listImage {
   width: calc(90% / 3);
   height: calc(30vw / 3);
+  max-height: calc(350px / 3);
 }
 ul {
   width: 100%;

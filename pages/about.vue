@@ -4,7 +4,7 @@
     <div class="message">
       <div v-html="$md.render(posts[0].content)"></div>
     </div>
-    <div class="profile">
+    <div class="profile" :class="{ mobile: mobileCheck }">
       <img :src="`${posts[0].thumbnail}`" alt="" />
       <div class="information">
         <h3>プロフィール</h3>
@@ -21,10 +21,35 @@ export default {
       title: 'ABOUT',
     }
   },
+  data() {
+    return {
+      width: Number,
+    }
+  },
   computed: {
     posts() {
       return this.$store.state.about
     },
+    mobileCheck() {
+      if (this.width > 380) {
+        return false
+      } else {
+        return true
+      }
+    },
+  },
+  methods: {
+    handleReisize() {
+      if (process.client) {
+        this.width = window.innerWidth
+      }
+    },
+  },
+  mounted() {
+    window.addEventListener('resize', this.handleReisize)
+  },
+  created() {
+    this.handleReisize()
   },
 }
 </script>
@@ -43,6 +68,22 @@ $thumbnailWidth: 180px;
   margin-bottom: 100px;
   /deep/ h2 {
     margin-bottom: 25px;
+  }
+}
+.mobile {
+  flex-flow: column;
+  align-items: center;
+  img {
+    margin-bottom: 30px;
+  }
+  .information {
+    margin: 0;
+  }
+  h3 {
+    text-align: center;
+  }
+  /deep/ p {
+    text-align: center;
   }
 }
 .profile {
