@@ -2,7 +2,7 @@
   <!-- check for common.scss -->
   <div class="pageMargin itemnewsWrapper">
     <ul>
-      <li v-for="(post, index) in posts" :key="index">
+      <li v-for="(post, index) in posts" :key="index" :class="responsiveCheck">
         <transition
           ><ItemPost
             :post="post"
@@ -36,11 +36,13 @@ export default {
     posts() {
       return this.$store.state.item
     },
-    mobileCheck() {
-      if (this.width > 380) {
-        return false
+    responsiveCheck() {
+      if (this.width < 480) {
+        return 'mobile'
+      } else if (this.width < 800) {
+        return 'pad'
       } else {
-        return true
+        return 'desktop'
       }
     },
   },
@@ -69,13 +71,24 @@ ul {
   display: flex;
   flex-wrap: wrap;
   li {
-    width: calc(100% / 3);
     display: flex;
     justify-content: center;
     align-items: flex-start;
   }
 }
-
+.desktop {
+  width: calc(100% / 3);
+  height: calc(105vw / 3);
+  max-height: 350px;
+}
+.pad {
+  width: calc(100% / 2);
+  height: calc(105vw / 2);
+}
+.mobile {
+  width: calc(100%);
+  height: calc(90vw);
+}
 button {
   width: 300px;
 }

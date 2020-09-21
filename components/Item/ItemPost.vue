@@ -18,14 +18,17 @@ export default {
 <style lang="scss" scoped>
 div {
   width: 77%;
-  height: 35vw;
-  max-height: 350px;
+  height: 100%;
   display: flex;
   flex-flow: column;
+  a {
+    height: 100%;
+  }
 }
 img {
   width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: cover;
   margin-bottom: 10px;
 }
 </style>
