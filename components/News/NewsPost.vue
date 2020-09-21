@@ -1,11 +1,10 @@
 <template>
   <div>
     <nuxt-link :to="`/item/${index}`" class="imageLink"
-      ><img :src="`${post.image1}`" class="roundsquareImage" alt=""
+      ><img :src="`${post.image}`" class="roundsquareImage" alt=""
     /></nuxt-link>
-    <nuxt-link :to="`/item/${index}`"
-      ><p>{{ post.name }}</p></nuxt-link
-    >
+    <p class="date">{{ post.date }}</p>
+    <p>{{ post.message }}</p>
   </div>
 </template>
 
@@ -17,15 +16,19 @@ export default {
 
 <style lang="scss" scoped>
 div {
-  width: 77%;
+  width: 85%;
   height: 35vw;
   max-height: 350px;
   display: flex;
   flex-flow: column;
 }
+.date {
+  color: $green;
+  font-size: 13px;
+}
 img {
   width: 100%;
-  height: auto;
+  height: 25vw;
   margin-bottom: 10px;
 }
 </style>
