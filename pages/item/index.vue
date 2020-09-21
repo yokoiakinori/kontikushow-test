@@ -86,8 +86,8 @@ ul {
   height: calc(105vw / 2);
 }
 .mobile {
-  width: calc(100%);
-  height: calc(90vw);
+  width: 100%;
+  height: 90vw;
 }
 button {
   width: 300px;

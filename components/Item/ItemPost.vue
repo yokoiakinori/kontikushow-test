@@ -21,14 +21,10 @@ div {
   height: 100%;
   display: flex;
   flex-flow: column;
-  a {
-    height: 100%;
-  }
 }
 img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: auto;
   margin-bottom: 10px;
 }
 </style>
