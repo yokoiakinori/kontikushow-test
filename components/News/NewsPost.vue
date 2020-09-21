@@ -29,6 +29,7 @@ div {
 img {
   width: 100%;
   height: 25vw;
+  max-height: 250px;
   margin-bottom: 10px;
 }
 </style>
