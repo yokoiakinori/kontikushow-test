@@ -153,7 +153,8 @@ export default {
 <style lang="scss" scoped>
 .illust {
   width: 100%;
-  height: 300px;
+  height: 40vw;
+  max-height: 300px;
   background-color: gray;
 }
 h2 {

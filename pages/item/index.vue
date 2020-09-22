@@ -78,16 +78,15 @@ ul {
 }
 .desktop {
   width: calc(100% / 3);
-  height: calc(105vw / 3);
-  max-height: 350px;
+  margin-bottom: 30px;
 }
 .pad {
   width: calc(100% / 2);
-  height: calc(105vw / 2);
+  margin-bottom: 40px;
 }
 .mobile {
   width: 100%;
-  height: 90vw;
+  margin-bottom: 40px;
 }
 button {
   width: 300px;
