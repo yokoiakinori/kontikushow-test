@@ -90,12 +90,17 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+div {
+  width: 100%;
+}
 .headerBackground {
-  width: 100vw;
+  width: 100%;
   background-color: $yellow;
   height: 9vw;
   min-height: 60px;
   max-height: 95px;
+  display: flex;
+  justify-content: center;
 }
 .header {
   animation: 1s appear;
@@ -129,6 +134,7 @@ a {
 }
 .socialIcons {
   margin-left: 25px;
+  // margin-right: 30px;
 }
 .mobileHeader {
   position: fixed;
