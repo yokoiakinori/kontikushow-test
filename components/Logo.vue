@@ -25,7 +25,7 @@
 .KontikushowLogo {
   animation: 1s appear;
   margin: 0;
-  margin-left: 0;
+  margin-left: 15px;
   width: 10vw;
   height: 10vw;
   max-width: 120px;

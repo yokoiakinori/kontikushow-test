@@ -99,17 +99,13 @@ export default {
 }
 .header {
   animation: 1s appear;
-  width: 100%;
+  width: 95%;
   max-width: 1100px;
   height: 100%;
-  margin: auto;
-  padding: 0 40px 0 20px;
+  margin: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
-.logo {
-  width: 32%;
 }
 .Navigation {
   padding: 0;

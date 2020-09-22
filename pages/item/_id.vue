@@ -1,5 +1,5 @@
 <template>
-  <div class="pageMargin">
+  <div class="pageMargin" :class="responsiveCheck">
     <div class="images">
       <img :src="`..${currentImage}`" alt="" class="currentImage" />
       <ul>
@@ -48,6 +48,7 @@ export default {
     return {
       currentItem: Object,
       currentImage: String,
+      width: Number,
     }
   },
   computed: {
@@ -56,6 +57,15 @@ export default {
     },
     titleString() {
       return this.currentItem.name
+    },
+    responsiveCheck() {
+      if (this.width < 480) {
+        return 'mobile'
+      } else if (this.width < 800) {
+        return 'pad'
+      } else {
+        return 'desktop'
+      }
     },
   },
   methods: {
@@ -68,10 +78,19 @@ export default {
         this.currentImage = this.currentItem.image3
       }
     },
+    handleReisize() {
+      if (process.client) {
+        this.width = window.innerWidth
+      }
+    },
+  },
+  mounted() {
+    window.addEventListener('resize', this.handleReisize)
   },
   created() {
     this.currentItem = this.posts[this.$route.params.id]
     this.currentImage = this.posts[this.$route.params.id].image1
+    this.handleReisize()
   },
 }
 </script>
@@ -83,6 +102,23 @@ div {
   display: flex;
   justify-content: space-between;
 }
+.mobile {
+  flex-flow: column;
+  align-items: center;
+  .images,
+  .information {
+    width: 100%;
+  }
+  .images {
+    margin-bottom: 30px;
+  }
+  .currentImage {
+    height: 60vw;
+  }
+  .listImage {
+    height: calc(60vw / 3);
+  }
+}
 .images {
   width: 60%;
   display: flex;
@@ -92,14 +128,14 @@ div {
 }
 .currentImage {
   width: 100%;
-  height: 30vw;
+  height: 35vw;
   max-height: 350px;
   margin-bottom: 2.55vw;
   transition-duration: 0.3s;
 }
 .listImage {
   width: calc(90% / 3);
-  height: calc(30vw / 3);
+  height: calc(35vw / 3);
   max-height: calc(350px / 3);
 }
 ul {
