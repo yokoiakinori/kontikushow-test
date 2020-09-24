@@ -66,7 +66,7 @@ $thumbnailWidth: 180px;
   background-color: gray;
   width: 100%;
   height: 56vw;
-  max-height: 420px;
+  max-height: 490px;
   object-fit: cover;
 }
 .message {

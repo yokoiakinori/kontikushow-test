@@ -52,10 +52,10 @@ export default {
     return {
       navigations: [
         { id: 1, name: 'HOME', path: '/' },
-        { id: 2, name: 'NEWS', path: '/news' },
-        { id: 3, name: 'ABOUT', path: '/about' },
-        { id: 4, name: 'ITEM', path: '/item' },
-        { id: 5, name: 'CONTACT', path: '/contact' },
+        { id: 2, name: 'ABOUT', path: '/about' },
+        { id: 3, name: 'ITEM', path: '/item' },
+        { id: 4, name: 'CONTACT', path: '/contact' },
+        { id: 5, name: 'OTHER', path: '/other' },
       ],
       width: Number,
       mobileMenuAppear: false,

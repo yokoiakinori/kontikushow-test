@@ -1,10 +1,11 @@
 <template>
   <ul>
     <li v-for="breadcrumb in breadcrumbs.data" :key="breadcrumb.name">
-      <nuxt-link v-if="breadcrumb.path" :to="breadcrumb.path">{{
-        breadcrumb.name
-      }}</nuxt-link>
-      <span v-else>{{ breadcrumb.name }}</span>
+      <p v-if="breadcrumb.path">
+        <nuxt-link :to="breadcrumb.path">{{ breadcrumb.name }}</nuxt-link>
+        ＞
+      </p>
+      <p v-else>{{ breadcrumb.name }}</p>
     </li>
   </ul>
 </template>
@@ -27,13 +28,11 @@ a {
   font-weight: 600;
   margin-right: 15px;
 }
-a,
-span {
-  font-size: 15px;
+p {
+  margin-right: 15px;
 }
-span {
-  font-family: 'Hiragino Sans' !important;
-  font-weight: 400 !important;
-  text-decoration: none;
+a,
+p {
+  font-size: 15px;
 }
 </style>
