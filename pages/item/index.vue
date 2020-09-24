@@ -1,6 +1,7 @@
 <template>
   <!-- check for common.scss -->
   <div class="pageMargin itemnewsWrapper">
+    <BreadcrumbTrail :breadcrumbs="breadcrumbs" />
     <ul>
       <li v-for="(post, index) in posts" :key="index" :class="responsiveCheck">
         <transition
@@ -43,6 +44,11 @@ export default {
         return 'pad'
       } else {
         return 'desktop'
+      }
+    },
+    breadcrumbs() {
+      return {
+        data: [{ name: 'TOP', path: '/' }, { name: 'ITEM' }],
       }
     },
   },

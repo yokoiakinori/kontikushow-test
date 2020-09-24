@@ -1,38 +1,41 @@
 <template>
-  <div class="pageMargin" :class="responsiveCheck">
-    <div class="images">
-      <img :src="`..${currentImage}`" alt="" class="currentImage" />
-      <ul>
-        <img
-          :src="`..${currentItem.image1}`"
-          alt=""
-          class="listImage imageLink"
-          @click="toggleImage('image1')"
-        />
-        <img
-          :src="`..${currentItem.image2}`"
-          alt=""
-          class="listImage imageLink"
-          @click="toggleImage('image2')"
-        />
-        <img
-          :src="`..${currentItem.image3}`"
-          alt=""
-          class="listImage imageLink"
-          @click="toggleImage('image3')"
-        />
-      </ul>
-    </div>
-    <div class="information">
-      <h2>{{ currentItem.name }}</h2>
-      <p class="price">¥{{ currentItem.price }}<span>（税込）</span></p>
-      <nuxt-link :to="`${currentItem.shopurl}`" class="shopLink"
-        >販売サイト(BOOTH)へ</nuxt-link
-      >
-      <p class="itemInfo">商品説明： <br />{{ currentItem.info }}</p>
-      <p class="specification">
-        商品仕様： <br />{{ currentItem.specification }}
-      </p>
+  <div class="pageMargin">
+    <BreadcrumbTrail :breadcrumbs="breadcrumbs" />
+    <div class="contents" :class="responsiveCheck">
+      <div class="images">
+        <img :src="`..${currentImage}`" alt="" class="currentImage" />
+        <ul class="selectImages">
+          <img
+            :src="`..${currentItem.image1}`"
+            alt=""
+            class="listImage imageLink"
+            @click="toggleImage('image1')"
+          />
+          <img
+            :src="`..${currentItem.image2}`"
+            alt=""
+            class="listImage imageLink"
+            @click="toggleImage('image2')"
+          />
+          <img
+            :src="`..${currentItem.image3}`"
+            alt=""
+            class="listImage imageLink"
+            @click="toggleImage('image3')"
+          />
+        </ul>
+      </div>
+      <div class="information">
+        <h2>{{ currentItem.name }}</h2>
+        <p class="price">¥{{ currentItem.price }}<span>（税込）</span></p>
+        <nuxt-link :to="`${currentItem.shopurl}`" class="shopLink"
+          >販売サイト(BOOTH)へ</nuxt-link
+        >
+        <p class="itemInfo">商品説明： <br />{{ currentItem.info }}</p>
+        <p class="specification">
+          商品仕様： <br />{{ currentItem.specification }}
+        </p>
+      </div>
     </div>
   </div>
 </template>
@@ -67,6 +70,15 @@ export default {
         return 'desktop'
       }
     },
+    breadcrumbs() {
+      return {
+        data: [
+          { name: 'TOP', path: '/' },
+          { name: 'ITEM', path: '/item' },
+          { name: this.currentItem.name },
+        ],
+      }
+    },
   },
   methods: {
     toggleImage(number) {
@@ -98,7 +110,9 @@ export default {
 <style lang="scss" scoped>
 div {
   width: 85vw;
-  max-width: 700px;
+  max-width: 880px;
+}
+.contents {
   display: flex;
   justify-content: space-between;
 }
@@ -129,7 +143,7 @@ div {
 .currentImage {
   width: 100%;
   height: 35vw;
-  max-height: 350px;
+  max-height: 380px;
   margin-bottom: 2.55vw;
   transition-duration: 0.3s;
 }
@@ -138,7 +152,7 @@ div {
   height: calc(35vw / 3);
   max-height: calc(350px / 3);
 }
-ul {
+.selectImages {
   width: 100%;
   display: flex;
   justify-content: space-between;

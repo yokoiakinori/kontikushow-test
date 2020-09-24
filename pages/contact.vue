@@ -1,5 +1,6 @@
 <template>
   <div class="pageMargin wrapper">
+    <BreadcrumbTrail :breadcrumbs="breadcrumbs" />
     <div class="illust"></div>
     <h2>ご質問などはこちらから</h2>
     <p>
@@ -104,6 +105,11 @@ export default {
         'is-sending': this.isSending,
         'is-error': this.isError,
         'is-complete': this.isSubmit,
+      }
+    },
+    breadcrumbs() {
+      return {
+        data: [{ name: 'TOP', path: '/' }, { name: 'CONTACT' }],
       }
     },
   },

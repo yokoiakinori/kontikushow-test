@@ -1,5 +1,6 @@
 <template>
   <div class="pageMargin wrapper">
+    <BreadcrumbTrail :breadcrumbs="breadcrumbs" />
     <img :src="`${posts[0].image}`" alt="" class="MainImage" />
     <div class="message">
       <div v-html="$md.render(posts[0].content)"></div>
@@ -35,6 +36,11 @@ export default {
         return false
       } else {
         return true
+      }
+    },
+    breadcrumbs() {
+      return {
+        data: [{ name: 'TOP', path: '/' }, { name: 'ABOUT' }],
       }
     },
   },
