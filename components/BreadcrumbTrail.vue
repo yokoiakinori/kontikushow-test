@@ -22,6 +22,7 @@ export default {
 ul {
   display: flex;
   margin-bottom: 30px;
+  flex-wrap: wrap;
 }
 a {
   color: $green;

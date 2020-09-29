@@ -1,10 +1,10 @@
 <template>
-  <div>
-    <nuxt-link :to="`/item/${index}`" class="imageLink"
-      ><img :src="`${post.image}`" class="roundsquareImage" alt=""
-    /></nuxt-link>
+  <div class="post">
     <p class="date">{{ post.date }}</p>
-    <p>{{ post.message }}</p>
+    <div class="content">
+      <h2>{{ post.title }}</h2>
+      <p>{{ post.message }}</p>
+    </div>
   </div>
 </template>
 
@@ -15,21 +15,39 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-div {
-  width: 85%;
-  height: 35vw;
-  max-height: 350px;
+.post {
+  width: 100%;
   display: flex;
-  flex-flow: column;
 }
 .date {
   color: $green;
   font-size: 13px;
+  width: 20%;
 }
-img {
-  width: 100%;
-  height: 25vw;
-  max-height: 250px;
+.content {
+  width: 80%;
+  display: flex;
+  flex-flow: column;
+}
+.mobile {
+  .post {
+    flex-flow: column;
+  }
+  .date {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  .content {
+    width: 100%;
+  }
+}
+h2 {
+  margin-bottom: 3px;
+  line-height: 27px;
   margin-bottom: 10px;
+}
+p {
+  font-size: 14px;
+  line-height: 22px;
 }
 </style>

@@ -70,6 +70,7 @@ export default {
   h2 {
     text-align: center;
     margin-bottom: 5px;
+    width: 100%;
   }
   ul {
     padding: 0;
@@ -82,23 +83,25 @@ export default {
   }
 }
 .popularItem {
-  width: 900px;
+  width: 100%;
   display: flex;
   margin-top: 60px;
   margin-bottom: 75px;
   ul {
     display: flex;
+    width: 80%;
+    justify-content: space-between;
   }
 }
 h2 {
   font-size: 20px;
   color: $green;
-  width: 140px;
+  width: 20%;
   text-align: left;
 }
 .post {
   margin-right: 45px;
-  width: 180px;
+  width: calc(90% / 3);
   &:last-child {
     margin-right: 0;
   }

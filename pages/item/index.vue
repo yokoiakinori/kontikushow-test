@@ -27,7 +27,6 @@ export default {
   data() {
     return {
       appearColumn: 1,
-      width: Number,
     }
   },
   computed: {
@@ -36,15 +35,6 @@ export default {
     },
     posts() {
       return this.$store.state.item
-    },
-    responsiveCheck() {
-      if (this.width < 480) {
-        return 'mobile'
-      } else if (this.width < 800) {
-        return 'pad'
-      } else {
-        return 'desktop'
-      }
     },
     breadcrumbs() {
       return {
@@ -56,17 +46,6 @@ export default {
     addItem() {
       this.appearColumn++
     },
-    handleReisize() {
-      if (process.client) {
-        this.width = window.innerWidth
-      }
-    },
-  },
-  mounted() {
-    window.addEventListener('resize', this.handleReisize)
-  },
-  created() {
-    this.handleReisize()
   },
 }
 </script>

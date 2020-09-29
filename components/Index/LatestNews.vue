@@ -1,15 +1,18 @@
 <template>
   <div class="indexNews" :class="{ mobile: mobileCheck }">
     <h2>ニュース</h2>
-    <ul>
-      <LNpost
-        v-for="(post, index) in posts"
-        :key="index"
-        :post="post"
-        :mobile="mobileCheck"
-        class="post"
-      ></LNpost>
-    </ul>
+    <div class="contents">
+      <ul>
+        <LNpost
+          v-for="(post, index) in posts"
+          :key="index"
+          :post="post"
+          :mobile="mobileCheck"
+          class="post"
+        ></LNpost>
+      </ul>
+      <nuxt-link to="/news">詳しくみる</nuxt-link>
+    </div>
   </div>
 </template>
 
@@ -58,18 +61,28 @@ export default {
   h2 {
     text-align: center;
     margin-bottom: 5px;
+    width: 100%;
   }
   ul {
     padding: 0;
   }
 }
 .indexNews {
-  width: 900px;
+  width: 100%;
   display: flex;
   margin-top: 70px;
 }
 h2 {
-  width: 140px;
+  width: 20%;
+}
+.contents {
+  width: 80%;
+  display: flex;
+  flex-flow: column;
+  align-items: flex-end;
+}
+ul {
+  width: 100%;
 }
 .post {
   margin-bottom: 20px;

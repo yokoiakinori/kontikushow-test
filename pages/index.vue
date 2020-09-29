@@ -1,8 +1,10 @@
 <template>
   <div class="container">
     <ImageSlide></ImageSlide>
-    <LatestNews></LatestNews>
-    <PopularItem></PopularItem>
+    <div class="content">
+      <LatestNews></LatestNews>
+      <PopularItem></PopularItem>
+    </div>
   </div>
 </template>
 
@@ -19,7 +21,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .container {
   margin: 0 auto;
   min-height: 100vh;
@@ -50,5 +52,9 @@ export default {
 
 .links {
   padding-top: 15px;
+}
+.content {
+  width: 90vw;
+  max-width: 1000px;
 }
 </style>

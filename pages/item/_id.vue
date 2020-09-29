@@ -51,7 +51,6 @@ export default {
     return {
       currentItem: Object,
       currentImage: String,
-      width: Number,
     }
   },
   computed: {
@@ -60,15 +59,6 @@ export default {
     },
     titleString() {
       return this.currentItem.name
-    },
-    responsiveCheck() {
-      if (this.width < 480) {
-        return 'mobile'
-      } else if (this.width < 800) {
-        return 'pad'
-      } else {
-        return 'desktop'
-      }
     },
     breadcrumbs() {
       return {
@@ -90,19 +80,10 @@ export default {
         this.currentImage = this.currentItem.image3
       }
     },
-    handleReisize() {
-      if (process.client) {
-        this.width = window.innerWidth
-      }
-    },
-  },
-  mounted() {
-    window.addEventListener('resize', this.handleReisize)
   },
   created() {
     this.currentItem = this.posts[this.$route.params.id]
     this.currentImage = this.posts[this.$route.params.id].image1
-    this.handleReisize()
   },
 }
 </script>
@@ -110,7 +91,7 @@ export default {
 <style lang="scss" scoped>
 div {
   width: 85vw;
-  max-width: 880px;
+  max-width: 1000px;
 }
 .contents {
   display: flex;
@@ -142,15 +123,15 @@ div {
 }
 .currentImage {
   width: 100%;
-  height: 35vw;
-  max-height: 380px;
+  height: 37vw;
+  max-height: 450px;
   margin-bottom: 2.55vw;
   transition-duration: 0.3s;
 }
 .listImage {
   width: calc(90% / 3);
   height: calc(35vw / 3);
-  max-height: calc(350px / 3);
+  max-height: calc(420px / 3);
 }
 .selectImages {
   width: 100%;

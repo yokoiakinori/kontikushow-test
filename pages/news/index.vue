@@ -2,7 +2,7 @@
   <!-- check for common.scss -->
   <div class="pageMargin itemnewsWrapper">
     <ul>
-      <li v-for="(post, index) in posts" :key="index">
+      <li v-for="(post, index) in posts" :key="index" :class="responsiveCheck">
         <transition
           ><NewsPost
             :post="post"
@@ -12,7 +12,6 @@
         ></transition>
       </li>
     </ul>
-    <button @click="addItem()" class="shadebutton">Read More</button>
   </div>
 </template>
 
@@ -27,28 +26,28 @@ export default {
     return {
       posts: [
         {
-          id: 1,
-          image: '/images/kontikushow-dummy-big.jpg',
           date: '2020年9月22日',
-          message: '【夏の新作】「ゲンゴロウモビール」販売開始',
+          title: '【夏の新作】「ゲンゴロウモビール」販売開始',
+          message:
+            'ITEMページにて新作「ゲンゴロウモビール」の情報を掲載しました。',
         },
         {
-          id: 2,
-          image: '/images/kontikushow-dummy-big.jpg',
           date: '2020年9月22日',
-          message: '【夏の新作】「ゲンゴロウモビール」販売開始',
+          title: '【夏の新作】「ゲンゴロウモビール」販売開始',
+          message:
+            'ITEMページにて新作「ゲンゴロウモビール」の情報を掲載しました。',
         },
         {
-          id: 2,
-          image: '/images/kontikushow-dummy-big.jpg',
           date: '2020年9月22日',
-          message: '【夏の新作】「ゲンゴロウモビール」販売開始',
+          title: '【夏の新作】「ゲンゴロウモビール」販売開始',
+          message:
+            'ITEMページにて新作「ゲンゴロウモビール」の情報を掲載しました。',
         },
         {
-          id: 2,
-          image: '/images/kontikushow-dummy-big.jpg',
           date: '2020年9月22日',
-          message: '【夏の新作】「ゲンゴロウモビール」販売開始',
+          title: '【夏の新作】「ゲンゴロウモビール」販売開始',
+          message:
+            'ITEMページにて新作「ゲンゴロウモビール」の情報を掲載しました。',
         },
       ],
       appearColumn: 1,
@@ -66,13 +65,13 @@ export default {
 ul {
   width: 100%;
   display: flex;
-  flex-wrap: wrap;
+  flex-flow: column;
   li {
-    width: calc(100% / 2);
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    margin-bottom: 15px;
+    margin-bottom: 50px;
   }
 }
 </style>
