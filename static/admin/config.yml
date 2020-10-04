@@ -18,23 +18,6 @@ collections:
       preview: false
     fields:
       - { label: 'SlideImage', name: 'image', widget: 'image' }
-  - name: 'latestnews'
-    label: 'LatestNews'
-    format: 'json'
-    folder: 'assets/content/LatestNews'
-    create: true
-    slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
-    editor:
-      preview: false
-    fields:
-      - { label: 'Thumbnail', name: 'image', widget: 'image' }
-      - {
-          label: 'Publish Date',
-          name: 'date',
-          widget: 'datetime',
-          format: 'YYYY/MM/DD',
-        }
-      - { label: 'Content', name: 'content', widget: 'markdown' }
   - name: 'about'
     label: 'About'
     format: 'json'
@@ -48,15 +31,40 @@ collections:
       - { label: 'Content', name: 'content', widget: 'markdown' }
       - { label: 'Thumbnail', name: 'thumbnail', widget: 'image' }
       - { label: 'Profile', name: 'profile', widget: 'markdown' }
+  - name: 'news'
+    label: 'News'
+    format: 'json'
+    folder: 'assets/content/News'
+    create: true
+    slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
+    editor:
+      preview: false
+    fields:
+      - {
+          label: 'Publish Date',
+          name: 'date',
+          widget: 'datetime',
+          format: 'YYYY/MM/DD',
+        }
+      - { label: 'Title', name: 'title', widget: 'string' }
+      - { label: 'Message', name: 'message', widget: 'markdown' }
   - name: 'item'
     label: 'Item'
     format: 'json'
     folder: 'assets/content/Item'
     create: true
     slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
+    identifier_field: ItemName
     editor:
       preview: false
     fields:
+      - {
+          label: 'Publish Date',
+          name: 'date',
+          widget: 'datetime',
+          format: 'YYYY/MM/DD',
+        }
+      - { label: 'PagePath', name: 'pagepath', widget: 'string' }
       - { label: 'ItemName', name: 'name', widget: 'string' }
       - { label: 'Price', name: 'price', widget: 'string' }
       - { label: 'ShopURL', name: 'shopaddress', widget: 'string' }
@@ -70,17 +78,17 @@ collections:
           label: 'Image1',
           name: 'image1',
           widget: 'image',
-          default: '/images/kontikushow-dummy.jpg',
+          default: '/images/kontikushow-dummy-big.jpg',
         }
       - {
           label: 'Image2',
           name: 'image2',
           widget: 'image',
-          default: '/images/kontikushow-dummy.jpg',
+          default: '/images/kontikushow-dummy-big.jpg',
         }
       - {
           label: 'Image3',
           name: 'image3',
           widget: 'image',
-          default: '/images/kontikushow-dummy.jpg',
+          default: '/images/kontikushow-dummy-big.jpg',
         }

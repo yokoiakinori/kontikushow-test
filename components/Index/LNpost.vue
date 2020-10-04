@@ -30,7 +30,7 @@ img {
   div {
     margin-top: 10px !important;
     margin-left: 0px !important;
-    width: 220px !important;
+    width: 100% !important;
   }
   .date {
     margin-bottom: 5px !important;

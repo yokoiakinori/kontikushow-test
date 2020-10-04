@@ -81,7 +81,7 @@ export default {
       }
     },
   },
-  created() {
+  mounted() {
     this.currentItem = this.posts[this.$route.params.id]
     this.currentImage = this.posts[this.$route.params.id].image1
   },

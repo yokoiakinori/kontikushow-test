@@ -13,7 +13,15 @@
         ></transition>
       </li>
     </ul>
-    <button @click="addItem()" class="shadebutton">Read More</button>
+    <infinite-loading
+      v-if="hasNext"
+      @infinite="infiniteHandler"
+      spinner="spiral"
+      direction="bottom"
+    >
+      <div slot="no-more">これ以上アイテムはありません。</div>
+      <div slot="no-results">ご希望のアイテムはありません。</div>
+    </infinite-loading>
   </div>
 </template>
 
@@ -26,13 +34,15 @@ export default {
   },
   data() {
     return {
-      appearColumn: 1,
+      items: [],
+      startPage: 0,
+      endPage: 0,
+      totalPages: 0,
+      pageSize: 6,
+      initialized: false,
     }
   },
   computed: {
-    appearItem() {
-      return this.appearColumn * 3
-    },
     posts() {
       return this.$store.state.item
     },
@@ -41,12 +51,12 @@ export default {
         data: [{ name: 'TOP', path: '/' }, { name: 'ITEM' }],
       }
     },
-  },
-  methods: {
-    addItem() {
-      this.appearColumn++
+    hasNext() {
+      return this.initialized && this.totalPages > this.endPage
     },
   },
+  methods: {},
+  mounted() {},
 }
 </script>
 
@@ -72,8 +82,5 @@ ul {
 .mobile {
   width: 100%;
   margin-bottom: 40px;
-}
-button {
-  width: 300px;
 }
 </style>
