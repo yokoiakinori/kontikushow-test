@@ -1,5 +1,5 @@
 <template>
-  <div class="popularItem" :class="{ mobile: mobileCheck }">
+  <div class="popularItem" :class="responsiveCheck">
     <h2>人気の商品</h2>
     <ul>
       <PIpost
@@ -36,28 +36,8 @@ export default {
       width: Number,
     }
   },
-  computed: {
-    mobileCheck() {
-      if (this.width > 380) {
-        return false
-      } else {
-        return true
-      }
-    },
-  },
-  methods: {
-    handleReisize() {
-      if (process.client) {
-        this.width = window.innerWidth
-      }
-    },
-  },
-  mounted() {
-    window.addEventListener('resize', this.handleReisize)
-  },
-  created() {
-    this.handleReisize()
-  },
+  computed: {},
+  methods: {},
 }
 </script>
 
