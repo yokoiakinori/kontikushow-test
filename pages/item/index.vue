@@ -5,11 +5,7 @@
     <ul>
       <li v-for="(post, index) in posts" :key="index" :class="responsiveCheck">
         <transition
-          ><ItemPost
-            :post="post"
-            :index="index"
-            v-if="index < appearItem"
-          ></ItemPost
+          ><ItemPost :post="post" :index="index"></ItemPost
         ></transition>
       </li>
     </ul>

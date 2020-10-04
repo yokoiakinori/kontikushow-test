@@ -82,8 +82,13 @@ export default {
     },
   },
   mounted() {
-    this.currentItem = this.posts[this.$route.params.id]
-    this.currentImage = this.posts[this.$route.params.id].image1
+    const path = this.$route.params.id
+    this.currentItem = this.posts.find(function (posts) {
+      return posts.pagepath === path
+    })
+    this.currentImage = this.posts.find(function (posts) {
+      return posts.pagepath === path
+    }).image1
   },
 }
 </script>
