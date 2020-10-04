@@ -1,13 +1,13 @@
 export const state = () => ({
   slideImage: [],
-  latestNews: [],
+  news: [],
   about: [],
   item: [],
 })
 
 export const mutations = {
-  setlatestNews(state, list) {
-    state.latestNews = list
+  setNews(state, list) {
+    state.news = list
   },
   setslideImage(state, list) {
     state.slideImage = list
@@ -20,18 +20,24 @@ export const mutations = {
   },
 }
 
+export const getters = {
+  allNews(state) {
+    return state.news
+  },
+}
+
 export const actions = {
   async nuxtServerInit({ commit }) {
-    // const LNfiles = await require.context(
-    //   '~/assets/content/LatestNews',
-    //   false,
-    //   /\.json$/
-    // )
-    // const newsPosts = LNfiles.keys().map((key) => {
-    //   const res = LNfiles(key)
-    //   res.slug = key.slice(2, -5)
-    //   return res
-    // })
+    const Nfiles = await require.context(
+      '~/assets/content/News',
+      false,
+      /\.json$/
+    )
+    const newsPosts = Nfiles.keys().map((key) => {
+      const res = Nfiles(key)
+      res.slug = key.slice(2, -5)
+      return res
+    })
     const SIfiles = await require.context(
       '~/assets/content/SlideImages',
       false,
@@ -52,19 +58,19 @@ export const actions = {
       res.slug = key.slice(2, -5)
       return res
     })
-    // const Ifiles = await require.context(
-    //   '~/assets/content/Item',
-    //   false,
-    //   /\.json$/
-    // )
-    // const itemPosts = Ifiles.keys().map((key) => {
-    //   const res = Ifiles(key)
-    //   res.slug = key.slice(2, -5)
-    //   return res
-    // })
-    // await commit('setlatestNews', newsPosts)
+    const Ifiles = await require.context(
+      '~/assets/content/Item',
+      false,
+      /\.json$/
+    )
+    const itemPosts = Ifiles.keys().map((key) => {
+      const res = Ifiles(key)
+      res.slug = key.slice(2, -5)
+      return res
+    })
+    await commit('setNews', newsPosts)
     await commit('setslideImage', slidePosts)
     await commit('setabout', aboutPosts)
-    // await commit('setitem', itemPosts)
+    await commit('setitem', itemPosts)
   },
 }

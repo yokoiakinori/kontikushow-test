@@ -4,7 +4,7 @@
     <div class="contents">
       <ul>
         <LNpost
-          v-for="(post, index) in posts"
+          v-for="(post, index) in latestNews"
           :key="index"
           :post="post"
           :mobile="mobileCheck"
@@ -24,31 +24,15 @@ export default {
     }
   },
   computed: {
-    mobileCheck() {
-      if (this.width > 380) {
-        //
-        return false
-      } else {
-        return true
-      }
-    },
     posts() {
-      return this.$store.state.latestNews
+      return this.$store.getters.allNews
+    },
+    latestNews() {
+      const displayedResults = 3
+      return this.posts.slice(0, displayedResults)
     },
   },
-  methods: {
-    handleReisize() {
-      if (process.client) {
-        this.width = window.innerWidth
-      }
-    },
-  },
-  mounted() {
-    window.addEventListener('resize', this.handleReisize)
-  },
-  created() {
-    this.handleReisize()
-  },
+  methods: {},
 }
 </script>
 

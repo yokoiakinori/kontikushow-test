@@ -4,11 +4,7 @@
     <ul>
       <li v-for="(post, index) in posts" :key="index" :class="responsiveCheck">
         <transition
-          ><NewsPost
-            :post="post"
-            :index="index"
-            v-if="index < appearItem"
-          ></NewsPost
+          ><NewsPost :post="post" :index="index"></NewsPost
         ></transition>
       </li>
     </ul>
@@ -23,39 +19,11 @@ export default {
     }
   },
   data() {
-    return {
-      posts: [
-        {
-          date: '2020年9月22日',
-          title: '【夏の新作】「ゲンゴロウモビール」販売開始',
-          message:
-            'ITEMページにて新作「ゲンゴロウモビール」の情報を掲載しました。',
-        },
-        {
-          date: '2020年9月22日',
-          title: '【夏の新作】「ゲンゴロウモビール」販売開始',
-          message:
-            'ITEMページにて新作「ゲンゴロウモビール」の情報を掲載しました。',
-        },
-        {
-          date: '2020年9月22日',
-          title: '【夏の新作】「ゲンゴロウモビール」販売開始',
-          message:
-            'ITEMページにて新作「ゲンゴロウモビール」の情報を掲載しました。',
-        },
-        {
-          date: '2020年9月22日',
-          title: '【夏の新作】「ゲンゴロウモビール」販売開始',
-          message:
-            'ITEMページにて新作「ゲンゴロウモビール」の情報を掲載しました。',
-        },
-      ],
-      appearColumn: 1,
-    }
+    return {}
   },
   computed: {
-    appearItem() {
-      return this.appearColumn * 4
+    posts() {
+      return this.$store.getters.allNews
     },
   },
 }
