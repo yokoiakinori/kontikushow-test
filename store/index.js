@@ -22,16 +22,16 @@ export const mutations = {
 
 export const actions = {
   async nuxtServerInit({ commit }) {
-    const LNfiles = await require.context(
-      '~/assets/content/LatestNews',
-      false,
-      /\.json$/
-    )
-    const newsPosts = LNfiles.keys().map((key) => {
-      const res = LNfiles(key)
-      res.slug = key.slice(2, -5)
-      return res
-    })
+    // const LNfiles = await require.context(
+    //   '~/assets/content/LatestNews',
+    //   false,
+    //   /\.json$/
+    // )
+    // const newsPosts = LNfiles.keys().map((key) => {
+    //   const res = LNfiles(key)
+    //   res.slug = key.slice(2, -5)
+    //   return res
+    // })
     const SIfiles = await require.context(
       '~/assets/content/SlideImages',
       false,
@@ -52,19 +52,19 @@ export const actions = {
       res.slug = key.slice(2, -5)
       return res
     })
-    const Ifiles = await require.context(
-      '~/assets/content/Item',
-      false,
-      /\.json$/
-    )
-    const itemPosts = Ifiles.keys().map((key) => {
-      const res = Ifiles(key)
-      res.slug = key.slice(2, -5)
-      return res
-    })
-    await commit('setlatestNews', newsPosts)
+    // const Ifiles = await require.context(
+    //   '~/assets/content/Item',
+    //   false,
+    //   /\.json$/
+    // )
+    // const itemPosts = Ifiles.keys().map((key) => {
+    //   const res = Ifiles(key)
+    //   res.slug = key.slice(2, -5)
+    //   return res
+    // })
+    // await commit('setlatestNews', newsPosts)
     await commit('setslideImage', slidePosts)
     await commit('setabout', aboutPosts)
-    await commit('setitem', itemPosts)
+    // await commit('setitem', itemPosts)
   },
 }
