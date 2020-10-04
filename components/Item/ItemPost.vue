@@ -12,7 +12,7 @@
 
 <script>
 export default {
-  props: ['post', 'index'],
+  props: ['post'],
 }
 </script>
 

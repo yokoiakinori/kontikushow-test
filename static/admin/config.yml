@@ -54,7 +54,6 @@ collections:
     folder: 'assets/content/Item'
     create: true
     slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
-    identifier_field: ItemName
     editor:
       preview: false
     fields:

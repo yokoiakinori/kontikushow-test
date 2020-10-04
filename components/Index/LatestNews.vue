@@ -1,5 +1,5 @@
 <template>
-  <div class="indexNews" :class="{ mobile: mobileCheck }">
+  <div class="indexNews" :class="responsiveCheck">
     <h2>ニュース</h2>
     <div class="contents">
       <ul>
@@ -38,7 +38,7 @@ export default {
 
 <style lang="scss" scoped>
 .mobile {
-  width: 350px !important;
+  width: 100% !important;
   flex-flow: column;
   align-items: center;
   margin-top: 30px !important;

@@ -3,10 +3,8 @@
   <div class="pageMargin itemnewsWrapper">
     <BreadcrumbTrail :breadcrumbs="breadcrumbs" />
     <ul>
-      <li v-for="(post, index) in posts" :key="index" :class="responsiveCheck">
-        <transition
-          ><ItemPost :post="post" :index="index"></ItemPost
-        ></transition>
+      <li v-for="post in posts" :key="post.pagepath" :class="responsiveCheck">
+        <transition><ItemPost :post="post"></ItemPost></transition>
       </li>
     </ul>
     <infinite-loading

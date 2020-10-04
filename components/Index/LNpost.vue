@@ -21,9 +21,14 @@ div {
     margin-top: 10px !important;
     margin-left: 0px !important;
     width: 100% !important;
+    flex-flow: column;
   }
   .date {
     margin-bottom: 5px !important;
+    width: 100%;
+  }
+  .baseP {
+    width: 100%;
   }
 }
 .date {
