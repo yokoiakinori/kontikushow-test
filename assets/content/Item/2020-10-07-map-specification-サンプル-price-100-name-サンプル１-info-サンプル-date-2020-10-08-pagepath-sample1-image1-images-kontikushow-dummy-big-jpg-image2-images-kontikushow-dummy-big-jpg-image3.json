@@ -1,0 +1,12 @@
+{
+  "specification": "サンプル",
+  "price": "100",
+  "name": "サンプル１",
+  "info": "サンプル",
+  "date": "2020/10/08",
+  "pagepath": "sample1",
+  "image1": "/images/kontikushow-dummy-big.jpg",
+  "image2": "/images/kontikushow-dummy-big.jpg",
+  "image3": "/images/kontikushow-dummy-big.jpg",
+  "shopaddress": "#"
+}
