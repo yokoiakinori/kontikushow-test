@@ -7,7 +7,7 @@
 
 <script>
 export default {
-  props: ['post', 'mobile'],
+  props: ['post'],
 }
 </script>
 

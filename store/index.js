@@ -24,6 +24,20 @@ export const getters = {
   allNews(state) {
     return state.news
   },
+  latestNews(state) {
+    return state.news.slice(0, 3)
+  },
+  getItem: (state) => (contentsIndex) => {
+    if (state.item.length - contentsIndex !== -1) {
+      return state.item[contentsIndex - 1]
+    }
+  },
+  appearItem: (state) => (contentsIndex) => {
+    return state.item.slice(contentsIndex - 1, contentsIndex + 5)
+  },
+  allItemLength(state) {
+    return state.item.length
+  },
 }
 
 export const actions = {

@@ -48,7 +48,7 @@ export default {
   plugins: [
     '~/plugins/vee-validate',
     '~/plugins/mixin-responsivecheck',
-    '~/plugins/infiniteloading',
+    { src: '~/plugins/infiniteloading', ssr: false },
   ],
   /*
    ** Auto import components

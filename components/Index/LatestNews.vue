@@ -4,10 +4,9 @@
     <div class="contents">
       <ul>
         <LNpost
-          v-for="(post, index) in latestNews"
+          v-for="(post, index) in posts"
           :key="index"
           :post="post"
-          :mobile="mobileCheck"
           class="post"
         ></LNpost>
       </ul>
@@ -25,11 +24,7 @@ export default {
   },
   computed: {
     posts() {
-      return this.$store.getters.allNews
-    },
-    latestNews() {
-      const displayedResults = 3
-      return this.posts.slice(0, displayedResults)
+      return this.$store.getters.latestNews
     },
   },
   methods: {},
