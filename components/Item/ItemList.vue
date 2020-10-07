@@ -16,7 +16,8 @@
       spinner="spiral"
       @infinite="addtoContents"
     >
-      <span slot="no-results">アイテムがありません</span>
+      <span slot="no-more">アイテムがありません</span>
+      <span slot="no-result">アイテムがありません</span>
     </infinite-loading>
   </div>
 </template>
@@ -36,7 +37,7 @@ export default {
     addtoContents() {
       setTimeout(() => {
         this.contents += 6
-        if (this.contents !== this.allItem) {
+        if (this.contents < this.allItem) {
           this.$refs.infiniteLoading.stateChanger.loaded()
         } else {
           this.$refs.infiniteLoading.stateChanger.complete()
