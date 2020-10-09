@@ -42,16 +42,16 @@ export const getters = {
 
 export const actions = {
   async nuxtServerInit({ commit }) {
-    const Nfiles = await require.context(
-      '~/assets/content/News',
-      false,
-      /\.json$/
-    )
-    const newsPosts = Nfiles.keys().map((key) => {
-      const res = Nfiles(key)
-      res.slug = key.slice(2, -5)
-      return res
-    })
+    // const Nfiles = await require.context(
+    //   '~/assets/content/News',
+    //   false,
+    //   /\.json$/
+    // )
+    // const newsPosts = Nfiles.keys().map((key) => {
+    //   const res = Nfiles(key)
+    //   res.slug = key.slice(2, -5)
+    //   return res
+    // })
     const SIfiles = await require.context(
       '~/assets/content/SlideImages',
       false,
