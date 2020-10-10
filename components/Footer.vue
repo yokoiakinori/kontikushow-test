@@ -14,7 +14,7 @@
   align-items: center;
   small {
     color: white;
-    font-family: futura;
+    font-family: 'futura', sans-serif;
     font-weight: medium;
     font-size: 13px;
     text-align: center;

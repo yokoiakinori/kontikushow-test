@@ -6,11 +6,13 @@ export const state = () => ({
 })
 
 export const mutations = {
-  setNews(state, list) {
-    state.news = list
-  },
   setslideImage(state, list) {
     state.slideImage = list
+  },
+  setNews(state, list) {
+    state.news = list.sort(function (a, b) {
+      return a['created-date'] < b['created-date'] ? 1 : -1
+    })
   },
   setabout(state, list) {
     state.about = list
@@ -42,16 +44,6 @@ export const getters = {
 
 export const actions = {
   async nuxtServerInit({ commit }) {
-    const Nfiles = await require.context(
-      '~/assets/content/News',
-      false,
-      /\.json$/
-    )
-    const newsPosts = Nfiles.keys().map((key) => {
-      const res = Nfiles(key)
-      res.slug = key.slice(2, -5)
-      return res
-    })
     const SIfiles = await require.context(
       '~/assets/content/SlideImages',
       false,
@@ -59,6 +51,16 @@ export const actions = {
     )
     const slidePosts = SIfiles.keys().map((key) => {
       const res = SIfiles(key)
+      res.slug = key.slice(2, -5)
+      return res
+    })
+    const Nfiles = await require.context(
+      '~/assets/content/News',
+      false,
+      /\.json$/
+    )
+    const newsPosts = Nfiles.keys().map((key) => {
+      const res = Nfiles(key)
       res.slug = key.slice(2, -5)
       return res
     })
@@ -82,8 +84,8 @@ export const actions = {
       res.slug = key.slice(2, -5)
       return res
     })
-    await commit('setNews', newsPosts)
     await commit('setslideImage', slidePosts)
+    await commit('setNews', newsPosts)
     await commit('setabout', aboutPosts)
     await commit('setitem', itemPosts)
   },

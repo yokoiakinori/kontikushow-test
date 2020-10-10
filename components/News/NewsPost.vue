@@ -1,6 +1,6 @@
 <template>
   <div class="post">
-    <p class="date">{{ post.date }}</p>
+    <p class="date">{{ simpleDate }}</p>
     <div class="content">
       <h2>{{ post.title }}</h2>
       <p>{{ post.message }}</p>
@@ -11,6 +11,11 @@
 <script>
 export default {
   props: ['post', 'index'],
+  computed: {
+    simpleDate() {
+      return this.post['created-date'].replace(/-\S{1,}/, '')
+    },
+  },
 }
 </script>
 
