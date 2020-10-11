@@ -1,6 +1,6 @@
 <template>
   <!-- check for common.scss -->
-  <div class="pageMargin itemnewsWrapper infinite-scroll">
+  <div class="pageMargin itemWrapper infinite-scroll">
     <BreadcrumbTrail :breadcrumbs="breadcrumbs" />
     <ItemList />
   </div>

@@ -1,7 +1,8 @@
 <template>
   <!-- check for common.scss -->
-  <div class="pageMargin itemnewsWrapper">
-    <ul>
+  <div class="pageMargin newsWrapper">
+    <BreadcrumbTrail :breadcrumbs="breadcrumbs" />
+    <ul class="list">
       <li v-for="(post, index) in posts" :key="index" :class="responsiveCheck">
         <transition
           ><NewsPost :post="post" :index="index"></NewsPost
@@ -25,12 +26,24 @@ export default {
     posts() {
       return this.$store.getters.allNews
     },
+    breadcrumbs() {
+      return {
+        data: [{ name: 'TOP', path: '/' }, { name: 'NEWS' }],
+      }
+    },
   },
 }
 </script>
 
 <style lang="scss" scoped>
-ul {
+.newsWrapper {
+  width: 85vw;
+  max-width: 1100px;
+  display: flex;
+  flex-flow: column;
+  align-items: flex-start;
+}
+.list {
   width: 100%;
   display: flex;
   flex-flow: column;
