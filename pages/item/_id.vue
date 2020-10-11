@@ -31,7 +31,8 @@
         <nuxt-link :to="`${currentItem.shopurl}`" class="shopLink"
           >販売サイト(BOOTH)へ</nuxt-link
         >
-        <p class="itemInfo">商品説明： <br />{{ currentItem.info }}</p>
+        <h3>商品説明</h3>
+        <p class="itemInfo">{{ currentItem.info }}</p>
         <p class="specification">
           商品仕様： <br />{{ currentItem.specification }}
         </p>
@@ -143,9 +144,17 @@ div {
   display: flex;
   justify-content: space-between;
 }
-h2 {
+h2,
+h3 {
   color: black;
+}
+h2 {
   margin-bottom: 30px;
+  font-size: 23px;
+}
+h3 {
+  font-size: 16px;
+  margin-bottom: 5px;
 }
 .information {
   width: 35%;
