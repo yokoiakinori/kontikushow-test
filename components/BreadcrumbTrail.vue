@@ -21,7 +21,7 @@ export default {
 <style lang="scss" scoped>
 ul {
   display: flex;
-  margin-bottom: 30px;
+  margin-bottom: 45px;
   flex-wrap: wrap;
 }
 a {

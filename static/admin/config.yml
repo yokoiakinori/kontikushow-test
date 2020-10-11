@@ -85,6 +85,14 @@ collections:
       - { label: '名前', name: 'name', widget: 'string' }
       - { label: '価格', name: 'price', widget: 'string' }
       - { label: 'BoothURL', name: 'shopaddress', widget: 'string' }
+      - {
+          label: 'カテゴリー',
+          name: 'category',
+          widget: 'select',
+          options: ['アクセサリー', '日用品', '事務用品', 'その他'],
+          default: ['アクセサリー'],
+        }
+      - { label: 'タグ', name: 'tags', widget: 'list' }
       - { label: 'アイテムの説明', name: 'info', widget: 'markdown' }
       - { label: '補足情報', name: 'specification', widget: 'markdown' }
       - {
