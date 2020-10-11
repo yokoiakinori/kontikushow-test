@@ -1,12 +1,7 @@
 <template>
   <div class="infinite-scroll">
-    <ul>
-      <li
-        v-for="post in posts"
-        :key="post.pagepath"
-        :class="responsiveCheck"
-        class="listItem"
-      >
+    <ul :class="responsiveCheck">
+      <li v-for="post in posts" :key="post.pagepath" class="listItem">
         <ItemPost :post="post" />
       </li>
     </ul>
@@ -64,25 +59,38 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss" scoped>
+$width: 90%;
 ul {
   width: 100%;
   display: flex;
   flex-flow: row wrap;
+  justify-content: space-between;
 }
 .infinite-scroll {
   width: 100%;
 }
 .desktop {
-  width: calc(100% / 3);
-  margin-bottom: 30px;
+  &::after {
+    content: '';
+    display: block;
+    width: calc(#{$width} / 3);
+  }
+  li {
+    width: calc(#{$width} / 3);
+    margin-bottom: 30px;
+  }
 }
 .pad {
-  width: calc(100% / 2);
-  margin-bottom: 40px;
+  li {
+    width: calc(#{$width} / 2);
+    margin-bottom: 40px;
+  }
 }
 .mobile {
-  width: 100%;
-  margin-bottom: 40px;
+  li {
+    width: $width;
+    margin-bottom: 40px;
+  }
 }
 .listItem {
   display: flex;
