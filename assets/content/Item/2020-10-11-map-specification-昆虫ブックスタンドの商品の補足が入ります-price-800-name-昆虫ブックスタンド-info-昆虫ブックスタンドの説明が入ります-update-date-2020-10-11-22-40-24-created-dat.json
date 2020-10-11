@@ -1,0 +1,22 @@
+{
+  "specification": "昆虫ブックスタンドの商品の補足が入ります",
+  "price": "800",
+  "name": "昆虫ブックスタンド",
+  "info": "昆虫ブックスタンドの説明が入ります",
+  "update-date": "2020/10/11-22:40:24",
+  "created-date": "2020/10/11-22:40:24",
+  "pagepath": "kontyu-bookstand",
+  "image1": "/images/kontikushow-dummy-big.jpg",
+  "image2": "/images/kontikushow-dummy-big.jpg",
+  "image3": "/images/kontikushow-dummy-big.jpg",
+  "tags": [
+    {
+      "tagname": "ブックスタンド"
+    },
+    {
+      "tagname": "昆虫"
+    }
+  ],
+  "shopaddress": "#",
+  "category": "事務用品"
+}
