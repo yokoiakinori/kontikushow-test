@@ -96,7 +96,9 @@ collections:
         name: 'tags',
         widget: 'list',
         fields:
-          - { label: 'タグ名', name: 'tagname', widget: 'text' }
+          - label: 'タグ名',
+          　name: 'tagname',
+          　widget: 'text'
       - { label: 'アイテムの説明', name: 'info', widget: 'markdown' }
       - { label: '補足情報', name: 'specification', widget: 'markdown' }
       - {
