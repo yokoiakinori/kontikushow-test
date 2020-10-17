@@ -3,22 +3,22 @@
     <BreadcrumbTrail :breadcrumbs="breadcrumbs" />
     <div class="contents" :class="responsiveCheck">
       <div class="images">
-        <img :src="`..${currentImage}`" alt="" class="currentImage" />
+        <img :src="`${currentImage}`" alt="" class="currentImage" />
         <ul class="selectImages">
           <img
-            :src="`..${currentItem.image1}`"
+            :src="`${currentItem.image1}`"
             alt=""
             class="listImage imageLink"
             @click="toggleImage('image1')"
           />
           <img
-            :src="`..${currentItem.image2}`"
+            :src="`${currentItem.image2}`"
             alt=""
             class="listImage imageLink"
             @click="toggleImage('image2')"
           />
           <img
-            :src="`..${currentItem.image3}`"
+            :src="`${currentItem.image3}`"
             alt=""
             class="listImage imageLink"
             @click="toggleImage('image3')"
@@ -31,6 +31,15 @@
         <nuxt-link :to="`${currentItem.shopurl}`" class="shopLink"
           >販売サイト(BOOTH)へ</nuxt-link
         >
+        <div class="tagList">
+          <p
+            v-for="(tag, index) in currentItem.tags"
+            :key="index"
+            class="tagItem"
+          >
+            <span>#</span> {{ tag.tagname }}
+          </p>
+        </div>
         <h3>商品説明</h3>
         <p class="itemInfo">{{ currentItem.info }}</p>
         <p class="specification">
@@ -54,21 +63,15 @@ export default {
       currentImage: String,
     }
   },
+  props: {
+    breadcrumbs: Object,
+  },
   computed: {
     posts() {
-      return this.$store.state.item
+      return this.$store.state.allItem
     },
     titleString() {
       return this.currentItem.name
-    },
-    breadcrumbs() {
-      return {
-        data: [
-          { name: 'TOP', path: '/' },
-          { name: 'ITEM', path: '/item' },
-          { name: this.currentItem.name },
-        ],
-      }
     },
   },
   methods: {
@@ -90,6 +93,7 @@ export default {
     this.currentImage = this.posts.find(function (posts) {
       return posts.pagepath === path
     }).image1
+    this.breadcrumbs.data.push({ name: this.titleString })
   },
 }
 </script>
@@ -178,6 +182,21 @@ h3 {
   text-align: center;
   border-radius: 5px;
   color: white;
+}
+.tagList {
+  display: flex;
+  width: 100%;
+  flex-flow: row wrap;
+  margin-bottom: 15px;
+}
+.tagItem {
+  margin-right: 15px;
+  display: inline-block;
+  span {
+    vertical-align: -0.15em;
+    font-size: 20px;
+    color: rgba($green, $alpha: 0.5);
+  }
 }
 .itemInfo {
   margin-bottom: 15px;

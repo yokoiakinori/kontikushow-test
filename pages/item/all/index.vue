@@ -2,7 +2,8 @@
   <!-- check for common.scss -->
   <div class="pageMargin itemWrapper infinite-scroll">
     <BreadcrumbTrail :breadcrumbs="breadcrumbs" />
-    <ItemList />
+    <CategoryNavigation />
+    <ItemList :categoryParam="'all'" />
   </div>
 </template>
 

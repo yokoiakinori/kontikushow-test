@@ -28,6 +28,9 @@ export default {
       allItem: Number,
     }
   },
+  props: {
+    categoryParam: String,
+  },
   methods: {
     addtoContents() {
       setTimeout(() => {
@@ -43,9 +46,19 @@ export default {
       this.posts.push(this.$store.getters.getItem(index))
     },
   },
+  created() {
+    if (this.categoryParam !== 'all') {
+      this.$store.commit('extractcategory', this.categoryParam)
+    }
+  },
   mounted() {
-    this.posts = this.$store.getters.appearItem(1)
-    this.allItem = this.$store.getters.allItemLength
+    if (this.categoryParam === 'all') {
+      this.posts = this.$store.getters.appearItem(1)
+      this.allItem = this.$store.getters.allItemLength
+    } else {
+      this.posts = this.$store.getters.appearCategoryItem(1)
+      this.allItem = this.$store.getters.categoryItemLength
+    }
   },
   watch: {
     contents() {
@@ -88,7 +101,7 @@ ul {
 }
 .mobile {
   li {
-    width: $width;
+    width: 100%;
     margin-bottom: 40px;
   }
 }

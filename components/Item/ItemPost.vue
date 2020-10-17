@@ -1,10 +1,10 @@
 <template>
   <div>
-    <nuxt-link :to="`/item/${post.pagepath}`" class="imageLink"
+    <nuxt-link :to="`${currentRoute}/${post.pagepath}`" class="imageLink"
       ><img :src="`${post.image1}`" class="roundsquareImage" alt=""
     /></nuxt-link>
-    <nuxt-link :to="`/item/${post.pagepath}`">
-      <p class="date">{{ post.date }}</p>
+    <nuxt-link :to="`${currentRoute}/${post.pagepath}`">
+      <p class="date">{{ simpleDate }}</p>
       <p>{{ post.name }}</p></nuxt-link
     >
   </div>
@@ -13,6 +13,14 @@
 <script>
 export default {
   props: ['post'],
+  computed: {
+    simpleDate() {
+      return this.post['created-date'].replace(/-\S{1,}/, '')
+    },
+    currentRoute() {
+      return this.$route.path
+    },
+  },
 }
 </script>
 

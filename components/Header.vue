@@ -53,7 +53,7 @@ export default {
       navigations: [
         { id: 1, name: 'HOME', path: '/' },
         { id: 2, name: 'ABOUT', path: '/about' },
-        { id: 3, name: 'ITEM', path: '/item' },
+        { id: 3, name: 'ITEM', path: '/item/all' },
         { id: 4, name: 'CONTACT', path: '/contact' },
         { id: 5, name: 'OTHER', path: '/other' },
       ],
