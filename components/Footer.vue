@@ -1,11 +1,11 @@
 <template>
-  <div class="footer">
+  <footer>
     <small>©2020 konchikushoshop. All Rights Reserved.</small>
-  </div>
+  </footer>
 </template>
 
 <style lang="scss" scoped>
-.footer {
+footer {
   width: 100vw;
   height: 50px;
   background-color: $green;

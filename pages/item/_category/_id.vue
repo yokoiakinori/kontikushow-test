@@ -23,7 +23,7 @@ export default {
       }
     },
     categories() {
-      return this.$store.state.categories
+      return this.$store.state.item.categories
     },
   },
   created() {

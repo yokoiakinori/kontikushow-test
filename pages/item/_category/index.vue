@@ -11,11 +11,11 @@
 export default {
   head() {
     return {
-      title: 'ITEM',
+      title: this.currentCategory.name,
     }
   },
   validate({ params, store }) {
-    return store.state.categories.some(
+    return store.state.item.categories.some(
       (category) => category.path === params.category
     )
   },
@@ -37,7 +37,7 @@ export default {
       }
     },
     categories() {
-      return this.$store.state.categories
+      return this.$store.state.item.categories
     },
   },
   methods: {},

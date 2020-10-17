@@ -32,13 +32,14 @@
           >販売サイト(BOOTH)へ</nuxt-link
         >
         <div class="tagList">
-          <p
+          <nuxt-link
             v-for="(tag, index) in currentItem.tags"
             :key="index"
             class="tagItem"
+            :to="`/item/tagsearch?tagname=${tag.tagname}`"
           >
             <span>#</span> {{ tag.tagname }}
-          </p>
+          </nuxt-link>
         </div>
         <h3>商品説明</h3>
         <p class="itemInfo">{{ currentItem.info }}</p>
@@ -68,7 +69,7 @@ export default {
   },
   computed: {
     posts() {
-      return this.$store.state.allItem
+      return this.$store.state.item.allItem
     },
     titleString() {
       return this.currentItem.name

@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <header>
     <div class="space" v-show="!mobileCheck"></div>
     <div class="headerBackground" :class="{ mobileHeader: !mobileCheck }">
       <div class="header">
@@ -43,7 +43,7 @@
         </li>
       </ul>
     </transition>
-  </div>
+  </header>
 </template>
 
 <script>

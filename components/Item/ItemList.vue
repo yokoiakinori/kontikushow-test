@@ -43,21 +43,32 @@ export default {
       }, 1000)
     },
     getContents(index) {
-      this.posts.push(this.$store.getters.getItem(index))
+      if (this.categoryParam === 'all') {
+        this.posts.push(this.$store.getters['item/getItem'](index))
+      } else if (this.categoryParam === 'tagsearch') {
+        this.posts.push(this.$store.getters['item/getTagItem'](index))
+      } else {
+        this.posts.push(this.$store.getters['item/getCategoryItem'](index))
+      }
     },
   },
   created() {
-    if (this.categoryParam !== 'all') {
-      this.$store.commit('extractcategory', this.categoryParam)
+    if (this.categoryParam !== 'all' && this.categoryParam !== 'tagsearch') {
+      this.$store.commit('item/extractcategory', this.categoryParam)
+    } else if (this.categoryParam === 'tagsearch') {
+      this.$store.commit('item/extractTag')
     }
   },
   mounted() {
     if (this.categoryParam === 'all') {
-      this.posts = this.$store.getters.appearItem(1)
-      this.allItem = this.$store.getters.allItemLength
+      this.posts = this.$store.getters['item/appearItem'](1)
+      this.allItem = this.$store.getters['item/allItemLength']
+    } else if (this.categoryParam === 'tagsearch') {
+      this.posts = this.$store.getters['item/appearTagItem'](1)
+      this.allItem = this.$store.getters['item/tagItemLength']
     } else {
-      this.posts = this.$store.getters.appearCategoryItem(1)
-      this.allItem = this.$store.getters.categoryItemLength
+      this.posts = this.$store.getters['item/appearCategoryItem'](1)
+      this.allItem = this.$store.getters['item/categoryItemLength']
     }
   },
   watch: {

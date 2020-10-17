@@ -2,14 +2,6 @@ export const state = () => ({
   slideImage: [],
   news: [],
   about: [],
-  allItem: Array,
-  categoryItem: Array,
-  categories: [
-    { name: 'アクセサリー', path: 'accessories' },
-    { name: '日用品', path: 'daily-necessities' },
-    { name: '事務用品', path: 'office-supplies' },
-    { name: 'その他', path: 'other' },
-  ],
 })
 
 export const mutations = {
@@ -25,24 +17,9 @@ export const mutations = {
     state.about = list
   },
   setitem(state, list) {
-    state.allItem = list.sort(function (a, b) {
+    state.item.allItem = list.sort(function (a, b) {
       return a['created-date'] < b['created-date'] ? 1 : -1
     })
-  },
-  extractcategory(state, category) {
-    if (state.categoryItem.length > 1) {
-      state.categoryItem = state.allItem
-        .filter(function (item) {
-          return item.category === category
-        })
-        .sort(function (a, b) {
-          return a['created-date'] < b['created-date'] ? 1 : -1
-        })
-    } else {
-      state.categoryItem = state.allItem.filter(function (item) {
-        return item.category === category
-      })
-    }
   },
 }
 
@@ -52,30 +29,6 @@ export const getters = {
   },
   latestNews(state) {
     return state.news.slice(0, 3)
-  },
-  appearItem: (state) => (contentsIndex) => {
-    return state.allItem.slice(contentsIndex - 1, contentsIndex + 5)
-  },
-  getItem: (state) => (contentsIndex) => {
-    if (state.allItem.length - contentsIndex !== -1) {
-      return state.item[contentsIndex - 1]
-    }
-  },
-  appearCategoryItem: (state) => (contentsIndex) => {
-    if (state.categoryItem.length >= 1) {
-      return state.categoryItem.slice(contentsIndex - 1, contentsIndex + 5)
-    }
-  },
-  getCategoryItem: (state) => (contentsIndex) => {
-    if (state.categoryItem.length - contentsIndex !== -1) {
-      return state.item[contentsIndex - 1]
-    }
-  },
-  allItemLength(state) {
-    return state.allItem.length
-  },
-  categoryItemLength(state) {
-    return state.categoryItem.length
   },
 }
 
