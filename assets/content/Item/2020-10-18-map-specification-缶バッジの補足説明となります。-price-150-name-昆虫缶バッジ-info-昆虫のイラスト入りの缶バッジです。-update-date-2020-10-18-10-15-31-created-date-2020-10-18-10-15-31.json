@@ -1,0 +1,22 @@
+{
+  "specification": "缶バッジの補足説明となります。",
+  "price": "150",
+  "name": "昆虫缶バッジ",
+  "info": "昆虫のイラスト入りの缶バッジです。",
+  "update-date": "2020/10/18-10:15:31",
+  "created-date": "2020/10/18-10:15:31",
+  "pagepath": "kontyu-canbadge",
+  "image1": "/images/kontikushow-dummy-big.jpg",
+  "image2": "/images/kontikushow-dummy-big.jpg",
+  "image3": "/images/kontikushow-dummy-big.jpg",
+  "tags": [
+    {
+      "tagname": "缶バッジ"
+    },
+    {
+      "tagname": "昆虫"
+    }
+  ],
+  "shopaddress": "#",
+  "category": "アクセサリー"
+}
