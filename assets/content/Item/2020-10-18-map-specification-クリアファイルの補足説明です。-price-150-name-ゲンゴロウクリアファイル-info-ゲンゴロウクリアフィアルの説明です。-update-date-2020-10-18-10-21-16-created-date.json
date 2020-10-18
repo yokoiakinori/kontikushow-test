@@ -1,0 +1,22 @@
+{
+  "specification": "クリアファイルの補足説明です。",
+  "price": "150",
+  "name": "ゲンゴロウクリアファイル",
+  "info": "ゲンゴロウクリアフィアルの説明です。",
+  "update-date": "2020/10/18-10:21:16",
+  "created-date": "2020/10/18-10:21:16",
+  "pagepath": "gengorou-clearfile",
+  "image1": "/images/kontikushow-dummy-big.jpg",
+  "image2": "/images/kontikushow-dummy-big.jpg",
+  "image3": "/images/kontikushow-dummy-big.jpg",
+  "tags": [
+    {
+      "tagname": "クリアファイル"
+    },
+    {
+      "tagname": "ゲンゴロウ"
+    }
+  ],
+  "shopaddress": "#",
+  "category": "事務用品"
+}
