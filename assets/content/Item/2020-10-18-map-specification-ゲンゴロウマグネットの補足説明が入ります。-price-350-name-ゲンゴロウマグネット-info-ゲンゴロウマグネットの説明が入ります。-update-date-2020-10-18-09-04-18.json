@@ -1,0 +1,22 @@
+{
+  "specification": "ゲンゴロウマグネットの補足説明が入ります。",
+  "price": "350",
+  "name": "ゲンゴロウマグネット",
+  "info": "ゲンゴロウマグネットの説明が入ります。",
+  "update-date": "2020/10/18-09:04:18",
+  "created-date": "2020/10/18-09:04:18",
+  "pagepath": "gengorou-magnet",
+  "image1": "/images/kontikushow-dummy-big.jpg",
+  "image2": "/images/kontikushow-dummy-big.jpg",
+  "image3": "/images/kontikushow-dummy-big.jpg",
+  "tags": [
+    {
+      "tagname": "ゲンゴロウ"
+    },
+    {
+      "tagname": "マグネット"
+    }
+  ],
+  "shopaddress": "#",
+  "category": "日用品"
+}
