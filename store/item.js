@@ -41,7 +41,7 @@ export const mutations = {
 
 export const getters = {
   appearItem: (state) => (contentsIndex) => {
-    return state.allItem.slice(contentsIndex - 1, contentsIndex + 4)
+    return state.allItem.slice(contentsIndex - 1, contentsIndex + 5)
   },
   getItem: (state) => (contentsIndex) => {
     if (state.allItem.length - contentsIndex !== -1) {
