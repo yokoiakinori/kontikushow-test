@@ -1,0 +1,22 @@
+{
+  "specification": "ゲンゴロウリストバンドの補足説明が入ります。",
+  "price": "400",
+  "name": "ゲンゴロウリストバンド",
+  "info": "ゲンゴロウリストバンドの説明が入ります。",
+  "update-date": "2020/10/18-09:08:02",
+  "created-date": "2020/10/18-09:07:30",
+  "pagepath": "gengorou-wristband",
+  "image1": "/images/kontikushow-dummy-big.jpg",
+  "image2": "/images/kontikushow-dummy-big.jpg",
+  "image3": "/images/kontikushow-dummy-big.jpg",
+  "tags": [
+    {
+      "tagname": "ゲンゴロウ"
+    },
+    {
+      "tagname": "リストバンド"
+    }
+  ],
+  "shopaddress": "#",
+  "category": "アクセサリー"
+}
