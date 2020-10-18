@@ -1,0 +1,19 @@
+{
+  "specification": "缶バッジの補足説明が入ります。",
+  "price": "150",
+  "name": "オリジナルロゴ缶バッジ",
+  "info": "昆畜商オリジナルロゴの入った缶バッジです。",
+  "update-date": "2020/10/18-10:18:56",
+  "created-date": "2020/10/18-10:18:56",
+  "pagepath": "logo-canbadge",
+  "image1": "/images/kontikushow-dummy-big.jpg",
+  "image2": "/images/kontikushow-dummy-big.jpg",
+  "image3": "/images/kontikushow-dummy-big.jpg",
+  "tags": [
+    {
+      "tagname": "缶バッジ"
+    }
+  ],
+  "shopaddress": "#",
+  "category": "アクセサリー"
+}
