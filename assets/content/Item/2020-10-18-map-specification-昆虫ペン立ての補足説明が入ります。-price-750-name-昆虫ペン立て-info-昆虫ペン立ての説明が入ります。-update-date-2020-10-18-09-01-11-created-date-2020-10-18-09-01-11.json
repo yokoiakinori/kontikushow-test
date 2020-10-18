@@ -1,0 +1,22 @@
+{
+  "specification": "昆虫ペン立ての補足説明が入ります。",
+  "price": "750",
+  "name": "昆虫ペン立て",
+  "info": "昆虫ペン立ての説明が入ります。",
+  "update-date": "2020/10/18-09:01:11",
+  "created-date": "2020/10/18-09:01:11",
+  "pagepath": "kontyu-penholder",
+  "image1": "/images/kontikushow-dummy-big.jpg",
+  "image2": "/images/kontikushow-dummy-big.jpg",
+  "image3": "/images/kontikushow-dummy-big.jpg",
+  "tags": [
+    {
+      "tagname": "ペンホルダー"
+    },
+    {
+      "tagname": "昆虫"
+    }
+  ],
+  "shopaddress": "#",
+  "category": "事務用品"
+}
