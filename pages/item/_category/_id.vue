@@ -1,5 +1,5 @@
 <template>
-  <IndividualItem :breadcrumbs="breadcrumbs" />
+  <IndividualItem :categoryParam="currentCategory.name" />
 </template>
 
 <script>
@@ -10,18 +10,6 @@ export default {
     }
   },
   computed: {
-    breadcrumbs() {
-      return {
-        data: [
-          { name: 'TOP', path: '/' },
-          { name: 'ITEM', path: '/item/all' },
-          {
-            name: this.currentCategory.name,
-            path: `/item/${this.currentCategory.path}`,
-          },
-        ],
-      }
-    },
     categories() {
       return this.$store.state.item.categories
     },

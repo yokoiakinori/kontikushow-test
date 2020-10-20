@@ -60,12 +60,13 @@ export default {
   },
   data() {
     return {
+      currentCategory: Object,
       currentItem: Object,
       currentImage: String,
     }
   },
   props: {
-    breadcrumbs: Object,
+    categoryParam: String,
   },
   computed: {
     posts() {
@@ -73,6 +74,44 @@ export default {
     },
     titleString() {
       return this.currentItem.name
+    },
+    categories() {
+      return this.$store.state.item.categories
+    },
+    breadcrumbs() {
+      if (this.categoryParam === 'all') {
+        return {
+          data: [
+            { name: 'TOP', path: '/' },
+            { name: 'ITEM', path: '/item/all' },
+            { name: this.titleString },
+          ],
+        }
+      } else if (this.categoryParam === 'tagsearch') {
+        return {
+          data: [
+            { name: 'TOP', path: '/' },
+            { name: 'ITEM', path: '/item/all' },
+            {
+              name: this.$store.state.item.tagKeyword,
+              path: `/item/tagsearch?tagname=${this.$store.state.item.tagKeyword}`,
+            },
+            { name: this.titleString },
+          ],
+        }
+      } else {
+        return {
+          data: [
+            { name: 'TOP', path: '/' },
+            { name: 'ITEM', path: '/item/all' },
+            {
+              name: this.currentCategory.name,
+              path: `/item/${this.currentCategory.path}`,
+            },
+            { name: this.titleString },
+          ],
+        }
+      }
     },
   },
   methods: {
@@ -86,6 +125,12 @@ export default {
       }
     },
   },
+  created() {
+    const path = this.$route.params.category
+    this.currentCategory = this.categories.find(function (category) {
+      return category.path === path
+    })
+  },
   mounted() {
     const path = this.$route.params.id
     this.currentItem = this.posts.find(function (posts) {
@@ -94,7 +139,6 @@ export default {
     this.currentImage = this.posts.find(function (posts) {
       return posts.pagepath === path
     }).image1
-    this.breadcrumbs.data.push({ name: this.titleString })
   },
 }
 </script>

@@ -1,19 +1,10 @@
 <template>
-  <IndividualItem :breadcrumbs="breadcrumbs" />
+  <IndividualItem :categoryParam="'all'" />
 </template>
 
 <script>
 export default {
-  computed: {
-    breadcrumbs() {
-      return {
-        data: [
-          { name: 'TOP', path: '/' },
-          { name: 'ITEM', path: '/item/all' },
-        ],
-      }
-    },
-  },
+  computed: {},
 }
 </script>
 
