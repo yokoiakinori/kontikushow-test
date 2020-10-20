@@ -34,9 +34,13 @@ export default {
   methods: {
     addtoContents() {
       setTimeout(() => {
-        this.contents += 6
         if (this.contents < this.allItem) {
           this.$refs.infiniteLoading.stateChanger.loaded()
+          if (this.allItem - this.contents >= 6) {
+            this.contents += 6
+          } else {
+            this.contents += this.allItem - this.contents + 1
+          }
         } else {
           this.$refs.infiniteLoading.stateChanger.complete()
         }
@@ -72,9 +76,19 @@ export default {
     }
   },
   watch: {
-    contents() {
-      for (let i = 0; i < this.allItem - this.contents + 1; i++) {
-        this.getContents(this.contents + i)
+    contents(contents) {
+      if (this.allItem - contents >= 6) {
+        for (let i = contents; i < contents + 6; i++) {
+          this.getContents(i)
+        }
+      } else {
+        for (
+          let i = contents;
+          i < contents + (this.allItem - contents + 1);
+          i++
+        ) {
+          this.getContents(i)
+        }
       }
     },
   },
