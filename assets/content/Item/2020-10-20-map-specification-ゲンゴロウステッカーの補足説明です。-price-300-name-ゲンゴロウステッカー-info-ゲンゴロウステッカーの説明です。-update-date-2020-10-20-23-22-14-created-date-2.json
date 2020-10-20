@@ -1,0 +1,22 @@
+{
+  "specification": "ゲンゴロウステッカーの補足説明です。",
+  "price": "300",
+  "name": "ゲンゴロウステッカー",
+  "info": "ゲンゴロウステッカーの説明です。",
+  "update-date": "2020/10/20-23:22:14",
+  "created-date": "2020/10/20-23:22:14",
+  "pagepath": "gengorou-sticker",
+  "image1": "/images/kontikushow-dummy-big.jpg",
+  "image2": "/images/kontikushow-dummy-big.jpg",
+  "image3": "/images/kontikushow-dummy-big.jpg",
+  "tags": [
+    {
+      "tagname": "ステッカー"
+    },
+    {
+      "tagname": "ゲンゴロウ"
+    }
+  ],
+  "shopaddress": "#",
+  "category": "アクセサリー"
+}
