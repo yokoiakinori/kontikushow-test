@@ -1,0 +1,25 @@
+{
+  "specification": "オリジナルマグカップの補足説明が入ります。",
+  "price": "600",
+  "name": "オリジナルロゴマグカップ",
+  "info": "ステンレス製のオリジナルロゴの入ったマグカップです。",
+  "update-date": "2020/10/20-22:20:21",
+  "created-date": "2020/10/20-22:20:21",
+  "pagepath": "logo-magcup",
+  "image1": "/images/kontikushow-dummy-big.jpg",
+  "image2": "/images/kontikushow-dummy-big.jpg",
+  "image3": "/images/kontikushow-dummy-big.jpg",
+  "tags": [
+    {
+      "tagname": "マグカップ"
+    },
+    {
+      "tagname": "ステンレス"
+    },
+    {
+      "tagname": "ロゴ"
+    }
+  ],
+  "shopaddress": "#",
+  "category": "日用品"
+}
