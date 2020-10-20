@@ -1,0 +1,25 @@
+{
+  "specification": "ゲンゴロウキャップの補足説明です。",
+  "price": "900",
+  "name": "ゲンゴロウキャップ",
+  "info": "可愛らしいゲンゴロウのイラスト入りのキャップです。",
+  "update-date": "2020/10/20-22:23:56",
+  "created-date": "2020/10/20-22:23:56",
+  "pagepath": "gengorou-cap",
+  "image1": "/images/kontikushow-dummy-big.jpg",
+  "image2": "/images/kontikushow-dummy-big.jpg",
+  "image3": "/images/kontikushow-dummy-big.jpg",
+  "tags": [
+    {
+      "tagname": "アウトドア"
+    },
+    {
+      "tagname": "ゲンゴロウ"
+    },
+    {
+      "tagname": "キャップ"
+    }
+  ],
+  "shopaddress": "#",
+  "category": "アクセサリー"
+}
