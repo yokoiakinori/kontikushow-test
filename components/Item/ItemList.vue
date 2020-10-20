@@ -36,13 +36,12 @@ export default {
     addtoContents() {
       setTimeout(() => {
         if (this.contents < this.allItem) {
-          this.$refs.infiniteLoading.stateChanger.loaded()
           if (this.allItem - this.contents > 6) {
             this.contents += 6
           } else {
             this.contents += this.allItem - this.contents
           }
-          this.count++
+          this.$refs.infiniteLoading.stateChanger.loaded()
         } else {
           this.$refs.infiniteLoading.stateChanger.complete()
         }
