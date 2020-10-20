@@ -1,0 +1,25 @@
+{
+  "specification": "オリジナルロゴキャップの補足説明が入ります。",
+  "price": "900",
+  "name": "オリジナルロゴキャップ",
+  "info": "オリジナルロゴキャップの説明が入ります。",
+  "update-date": "2020/10/20-22:15:26",
+  "created-date": "2020/10/20-22:15:26",
+  "pagepath": "logo-cap",
+  "image1": "/images/kontikushow-dummy-big.jpg",
+  "image2": "/images/kontikushow-dummy-big.jpg",
+  "image3": "/images/kontikushow-dummy-big.jpg",
+  "tags": [
+    {
+      "tagname": "ロゴ"
+    },
+    {
+      "tagname": "アウトドア"
+    },
+    {
+      "tagname": "キャップ"
+    }
+  ],
+  "shopaddress": "#",
+  "category": "アクセサリー"
+}
