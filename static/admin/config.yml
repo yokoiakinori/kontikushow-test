@@ -18,6 +18,21 @@ collections:
       preview: false
     fields:
       - { label: 'スライド画像', name: 'image', widget: 'image' }
+  - name: 'popularitems'
+    label: 'PopularItems'
+    format: 'json'
+    folder: 'assets/content/PopularItems'
+    create: true
+    slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
+    editor:
+      preview: false
+    fields:
+      - {
+          label: '人気の商品',
+          name: 'popularitems',
+          widget: 'relation',
+          collection: 'item',
+        }
   - name: 'about'
     label: 'About'
     format: 'json'
