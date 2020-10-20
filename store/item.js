@@ -54,7 +54,7 @@ export const getters = {
 
   appearCategoryItem: (state) => (contentsIndex) => {
     if (state.categoryItem.length >= 1) {
-      return state.categoryItem.slice(contentsIndex - 1, contentsIndex + 4)
+      return state.categoryItem.slice(contentsIndex - 1, contentsIndex + 5)
     }
   },
   getCategoryItem: (state) => (contentsIndex) => {
@@ -68,7 +68,7 @@ export const getters = {
 
   appearTagItem: (state) => (contentsIndex) => {
     if (state.tagItem.length >= 1) {
-      return state.tagItem.slice(contentsIndex - 1, contentsIndex + 4)
+      return state.tagItem.slice(contentsIndex - 1, contentsIndex + 5)
     }
   },
   getTagItem: (state) => (contentsIndex) => {
