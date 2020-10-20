@@ -23,9 +23,10 @@ export default {
     return {
       posts: [],
       pagesize: 6,
-      contents: 1,
+      contents: 0,
       start: 0,
       allItem: Number,
+      count: 0,
     }
   },
   props: {
@@ -36,11 +37,12 @@ export default {
       setTimeout(() => {
         if (this.contents < this.allItem) {
           this.$refs.infiniteLoading.stateChanger.loaded()
-          if (this.allItem - this.contents >= 6) {
+          if (this.allItem - this.contents > 6) {
             this.contents += 6
           } else {
-            this.contents += this.allItem - this.contents + 1
+            this.contents += this.allItem - this.contents
           }
+          this.count++
         } else {
           this.$refs.infiniteLoading.stateChanger.complete()
         }
@@ -78,13 +80,13 @@ export default {
   watch: {
     contents(contents) {
       if (this.allItem - contents >= 6) {
-        for (let i = contents; i < contents + 6; i++) {
+        for (let i = contents + 1; i < contents + 7; i++) {
           this.getContents(i)
         }
       } else {
         for (
-          let i = contents;
-          i < contents + (this.allItem - contents + 1);
+          let i = contents + 1;
+          i < contents + (this.allItem - contents) + 1;
           i++
         ) {
           this.getContents(i)
