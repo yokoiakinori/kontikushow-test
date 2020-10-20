@@ -32,6 +32,9 @@ collections:
           name: 'popularitems',
           widget: 'relation',
           collection: 'item',
+          value_field: 'name',
+          search_fields:
+            ['created-date', 'update-date', 'pagepath', 'name', 'price'],
         }
   - name: 'about'
     label: 'About'
