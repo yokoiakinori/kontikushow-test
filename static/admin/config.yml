@@ -33,7 +33,7 @@ collections:
           widget: 'relation',
           collection: 'item',
           value_field: 'name',
-          search_fields: 'name',
+          search_fields: ['name'],
         }
   - name: 'about'
     label: 'About'
