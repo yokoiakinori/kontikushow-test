@@ -33,8 +33,7 @@ collections:
           widget: 'relation',
           collection: 'item',
           value_field: 'name',
-          search_fields:
-            ['created-date', 'update-date', 'pagepath', 'name', 'price'],
+          search_fields: 'name',
         }
   - name: 'about'
     label: 'About'
