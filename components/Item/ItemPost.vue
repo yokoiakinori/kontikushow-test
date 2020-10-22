@@ -1,7 +1,9 @@
 <template>
   <div>
-    <nuxt-link :to="`${currentRoute}/${post.pagepath}`" class="imageLink"
-      ><img :src="`${post.image1}`" class="roundsquareImage" alt=""
+    <nuxt-link
+      :to="`${currentRoute}/${post.pagepath}`"
+      class="imageLink roundsquareImage"
+      ><img :src="`${post.image1}`" alt=""
     /></nuxt-link>
     <nuxt-link :to="`${currentRoute}/${post.pagepath}`">
       <p class="date">{{ simpleDate }}</p>
@@ -33,7 +35,7 @@ div {
 }
 img {
   width: 100%;
-  height: auto;
+  height: 100%;
   margin-bottom: 10px;
 }
 .date {

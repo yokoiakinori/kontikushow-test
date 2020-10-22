@@ -1,7 +1,10 @@
 <template>
   <div>
-    <nuxt-link :to="`/item/all/${post.pagepath}`" class="imageLink">
-      <img :src="`${post.image1}`" class="roundsquareImage" alt="" />
+    <nuxt-link
+      :to="`/item/all/${post.pagepath}`"
+      class="imageLink roundsquareImage"
+    >
+      <img :src="`${post.image1}`" alt="" />
     </nuxt-link>
     <div class="information">
       <nuxt-link :to="`${currentRoute}/${post.pagepath}`">
@@ -30,7 +33,7 @@ div {
 }
 img {
   width: 100%;
-  height: auto;
+  height: 100%;
 }
 .information {
   width: 100%;
