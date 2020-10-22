@@ -11,7 +11,9 @@ export const mutations = {
     state.slideImage = list
   },
   inputPIname(state, list) {
-    state.selectPI = list
+    state.selectPI = list.sort(function (a, b) {
+      return a.name < b.name ? 1 : 1
+    })
   },
   setpopularItem(state) {
     if (state.popularItem <= 3) {
