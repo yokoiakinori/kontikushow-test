@@ -4,7 +4,7 @@
     <ul>
       <PIpost
         v-for="post in posts"
-        :key="post.id"
+        :key="post.name"
         :post="post"
         class="post"
       ></PIpost>
@@ -16,28 +16,18 @@
 export default {
   data() {
     return {
-      posts: [
-        {
-          id: 1,
-          imagepath: 'IMG_4598.jpg',
-          name: '【夏限定】ゲンゴロウ木製キーホルダー',
-        },
-        {
-          id: 2,
-          imagepath: 'IMG_4598.jpg',
-          name: '【夏限定】ゲンゴロウ木製キーホルダー',
-        },
-        {
-          id: 3,
-          imagepath: 'IMG_4598.jpg',
-          name: '【夏限定】ゲンゴロウ木製キーホルダー',
-        },
-      ],
       width: Number,
     }
   },
-  computed: {},
+  computed: {
+    posts() {
+      return this.$store.state.popularItem
+    },
+  },
   methods: {},
+  mounted() {
+    this.$store.commit('setpopularItem')
+  },
 }
 </script>
 

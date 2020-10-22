@@ -1,11 +1,13 @@
 <template>
   <div>
-    <nuxt-link to="#" class="imageLink">
-      <img :src="`images/${post.imagepath}`" alt="" />
+    <nuxt-link :to="`/item/all/${post.pagepath}`" class="imageLink">
+      <img :src="`${post.image1}`" class="roundsquareImage" alt="" />
     </nuxt-link>
     <div class="information">
-      <p class="content" v-html="post.name"></p>
-      <nuxt-link to="#">販売サイト(BOOTH)へ</nuxt-link>
+      <nuxt-link :to="`${currentRoute}/${post.pagepath}`">
+        <p class="date">{{ simpleDate }}</p>
+        <p class="name">{{ post.name }}</p></nuxt-link
+      >
     </div>
   </div>
 </template>
@@ -13,6 +15,11 @@
 <script>
 export default {
   props: ['post'],
+  computed: {
+    simpleDate() {
+      return this.post['created-date'].replace(/-\S{1,}/, '')
+    },
+  },
 }
 </script>
 
@@ -34,13 +41,10 @@ img {
 }
 .date {
   color: $green;
-  font-size: 15px;
-  margin-bottom: 10px;
+  font-size: 13px;
 }
-.content {
-  font-size: 16px;
-  line-height: 29px;
-  text-align: left;
+.name {
+  color: black;
 }
 a {
   font-family: 'Hiragino Sans';

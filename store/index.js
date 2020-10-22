@@ -1,5 +1,7 @@
 export const state = () => ({
   slideImage: [],
+  selectPI: [],
+  popularItem: [],
   news: [],
   about: [],
 })
@@ -8,7 +10,21 @@ export const mutations = {
   setslideImage(state, list) {
     state.slideImage = list
   },
-  setNews(state, list) {
+  inputPIname(state, list) {
+    state.selectPI = list
+  },
+  setpopularItem(state) {
+    if (state.popularItem <= 3) {
+      for (let i = 0; i < state.selectPI.length; i++) {
+        state.popularItem.push(
+          state.item.allItem.find(
+            (element) => element.name === state.selectPI[i].popularitems
+          )
+        )
+      }
+    }
+  },
+  setnews(state, list) {
     state.news = list.sort(function (a, b) {
       return a['created-date'] < b['created-date'] ? 1 : -1
     })
@@ -44,6 +60,16 @@ export const actions = {
       res.slug = key.slice(2, -5)
       return res
     })
+    const PIfiles = await require.context(
+      '~/assets/content/PopularItems',
+      false,
+      /\.json$/
+    )
+    const popularItemPosts = PIfiles.keys().map((key) => {
+      const res = PIfiles(key)
+      res.slug = key.slice(2, -5)
+      return res
+    })
     const Nfiles = await require.context(
       '~/assets/content/News',
       false,
@@ -75,7 +101,8 @@ export const actions = {
       return res
     })
     await commit('setslideImage', slidePosts)
-    await commit('setNews', newsPosts)
+    await commit('inputPIname', popularItemPosts)
+    await commit('setnews', newsPosts)
     await commit('setabout', aboutPosts)
     await commit('setitem', itemPosts)
   },
