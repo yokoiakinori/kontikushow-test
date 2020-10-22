@@ -35,6 +35,7 @@ collections:
           value_field: 'name',
           search_fields: ['name'],
         }
+      - { label: '順番', name: 'name', widget: 'string' }
   - name: 'about'
     label: 'About'
     format: 'json'
