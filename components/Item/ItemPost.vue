@@ -2,10 +2,10 @@
   <div>
     <nuxt-link
       :to="`${currentRoute}/${post.pagepath}`"
-      class="imageLink roundsquareImage"
+      class="imageLink roundsquareImage image"
       ><img :src="`${post.image1}`" alt=""
     /></nuxt-link>
-    <nuxt-link :to="`${currentRoute}/${post.pagepath}`">
+    <nuxt-link :to="`${currentRoute}/${post.pagepath}`" class="info">
       <p class="date">{{ simpleDate }}</p>
       <p>{{ post.name }}</p></nuxt-link
     >
@@ -41,5 +41,14 @@ img {
 .date {
   font-size: 13px;
   color: $green;
+}
+.image {
+  height: 76%;
+}
+.info {
+  height: 24%;
+  display: flex;
+  flex-flow: column;
+  justify-content: flex-end;
 }
 </style>

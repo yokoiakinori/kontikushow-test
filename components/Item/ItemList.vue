@@ -99,6 +99,7 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss" scoped>
 $width: 90%;
+$height: 88vw;
 ul {
   width: 100%;
   display: flex;
@@ -116,6 +117,8 @@ ul {
   }
   li {
     width: calc(#{$width} / 3);
+    height: calc(#{$height}/ 3);
+    max-height: 445px;
     margin-bottom: 30px;
   }
 }
