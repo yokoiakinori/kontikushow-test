@@ -119,19 +119,19 @@ ul {
     width: calc(#{$width} / 3);
     height: calc(#{$height}/ 3);
     max-height: 445px;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
   }
 }
 .pad {
   li {
     width: calc(#{$width} / 2);
-    margin-bottom: 40px;
+    margin-bottom: 25px;
   }
 }
 .mobile {
   li {
     width: 100%;
-    margin-bottom: 40px;
+    margin-bottom: 10px;
   }
 }
 .listItem {

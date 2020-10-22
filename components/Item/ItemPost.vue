@@ -47,8 +47,9 @@ img {
 }
 .info {
   height: 24%;
+  margin-top: 20px;
   display: flex;
   flex-flow: column;
-  justify-content: flex-end;
+  justify-content: flex-start;
 }
 </style>
