@@ -2,7 +2,8 @@
   <div>
     <nuxt-link
       :to="`/item/all/${post.pagepath}`"
-      class="imageLink roundsquareImage image"
+      class="imageLink roundsquareImage"
+      :class="responsiveCheck"
     >
       <img :src="`${post.image1}`" alt="" />
     </nuxt-link>
@@ -35,9 +36,13 @@ img {
   width: 100%;
   height: 100%;
 }
-.image {
+.desktop {
   height: 20vw;
   max-height: 220px;
+}
+.mobile {
+  height: 90vw;
+  max-height: 300px;
 }
 .information {
   width: 100%;
