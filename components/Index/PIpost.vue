@@ -41,8 +41,7 @@ img {
   max-height: 220px;
 }
 .mobile {
-  height: 90vw;
-  max-height: 300px;
+  height: 70vw;
 }
 .information {
   width: 100%;
