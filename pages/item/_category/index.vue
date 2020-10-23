@@ -1,6 +1,6 @@
 <template>
   <!-- check for common.scss -->
-  <div class="pageMargin itemWrapper infinite-scroll">
+  <div class="pageMargin pageWrapper infinite-scroll">
     <BreadcrumbTrail :breadcrumbs="breadcrumbs" />
     <CategoryNavigation />
     <ItemList :categoryParam="currentCategory.name" />
