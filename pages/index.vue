@@ -16,6 +16,14 @@ export default {
         { src: 'https://identity.netlify.com/v1/netlify-identity-widget.js' },
       ],
       title: 'TOP',
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content:
+            '「『昆』虫の知識を『蓄』えながら『商』品を作る」をコンセプトにオリジナルグッズを紹介しています。',
+        },
+      ],
     }
   },
 }

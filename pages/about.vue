@@ -20,6 +20,14 @@ export default {
   head() {
     return {
       title: 'ABOUT',
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content:
+            '「ウーニ」と申します。岩手県在住。短大のデザイン科を卒業しデザイン系の仕事をしています。ゲンゴロウ数種ととカブトムシを飼育。好きな昆虫はナミゲンゴロウ。',
+        },
+      ],
     }
   },
   data() {

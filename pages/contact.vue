@@ -84,6 +84,14 @@ export default {
   head() {
     return {
       title: 'CONTACT',
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content:
+            '作品や商品、お仕事に関してのお問い合わせはこちらからお願いいたします。お問い合わせ内容によってはお返事できかねる場合がありますので、あらかじめご了承ください。',
+        },
+      ],
     }
   },
   data() {
