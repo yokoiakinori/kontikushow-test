@@ -1,5 +1,5 @@
 <template>
-  <div class="pageMargin wrapper">
+  <div class="pageMargin pageWrapper top">
     <BreadcrumbTrail :breadcrumbs="breadcrumbs" />
     <div class="illust"></div>
     <h2>ご質問などはこちらから</h2>
@@ -165,6 +165,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.top {
+  justify-content: flex-start;
+  align-items: flex-start;
+}
 .illust {
   width: 100%;
   height: 40vw;
@@ -182,6 +186,7 @@ form {
   display: flex;
   flex-flow: column;
   margin-top: 25px;
+  width: 100%;
   label {
     display: flex;
     flex-flow: column;

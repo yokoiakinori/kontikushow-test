@@ -1,5 +1,5 @@
 <template>
-  <div class="pageMargin wrapper">
+  <div class="pageMargin pageWrapper top">
     <BreadcrumbTrail :breadcrumbs="breadcrumbs" />
     <img :src="`${posts[0].image}`" alt="" class="MainImage" />
     <div class="message">
@@ -70,6 +70,10 @@ export default {
 
 <style lang="scss" scoped>
 $thumbnailWidth: 180px;
+.top {
+  justify-content: flex-start;
+  align-items: flex-start;
+}
 .MainImage {
   background-color: gray;
   width: 100%;
