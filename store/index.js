@@ -4,6 +4,7 @@ export const state = () => ({
   popularItem: [],
   news: [],
   about: [],
+  questionAnswer: [],
 })
 
 export const mutations = {
@@ -25,6 +26,11 @@ export const mutations = {
         )
       }
     }
+  },
+  setFAQ(state, list) {
+    state.questionAnswer = list.sort(function (a, b) {
+      return a['created-date'] < b['created-date'] ? 1 : -1
+    })
   },
   setnews(state, list) {
     state.news = list.sort(function (a, b) {
@@ -72,6 +78,16 @@ export const actions = {
       res.slug = key.slice(2, -5)
       return res
     })
+    const QAfiles = await require.context(
+      '~/assets/content/FAQ',
+      false,
+      /\.json$/
+    )
+    const questionAnswerPosts = QAfiles.keys().map((key) => {
+      const res = QAfiles(key)
+      res.slug = key.slice(2, -5)
+      return res
+    })
     const Nfiles = await require.context(
       '~/assets/content/News',
       false,
@@ -104,6 +120,7 @@ export const actions = {
     })
     await commit('setslideImage', slidePosts)
     await commit('inputPIname', popularItemPosts)
+    await commit('setFAQ', questionAnswerPosts)
     await commit('setnews', newsPosts)
     await commit('setabout', aboutPosts)
     await commit('setitem', itemPosts)

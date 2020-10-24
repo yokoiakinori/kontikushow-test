@@ -28,8 +28,12 @@
       <div class="information">
         <h2>{{ currentItem.name }}</h2>
         <p class="price">¥{{ currentItem.price }}<span>（税込）</span></p>
-        <nuxt-link :to="`${currentItem.shopurl}`" class="shopLink"
-          >販売サイト(BOOTH)へ</nuxt-link
+        <a
+          :href="`${currentItem.shopurl}`"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="shopLink"
+          >販売サイト(BOOTH)へ</a
         >
         <div class="tagList">
           <nuxt-link
