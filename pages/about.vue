@@ -73,6 +73,7 @@ $thumbnailWidth: 180px;
 .top {
   justify-content: flex-start;
   align-items: flex-start;
+  max-width: 750px !important;
 }
 .MainImage {
   background-color: gray;

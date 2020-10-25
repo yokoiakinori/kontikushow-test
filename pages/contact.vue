@@ -168,6 +168,7 @@ export default {
 .top {
   justify-content: flex-start;
   align-items: flex-start;
+  max-width: 750px !important;
 }
 .illust {
   width: 100%;
