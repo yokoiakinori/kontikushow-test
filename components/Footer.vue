@@ -38,7 +38,7 @@ footer {
     li {
       padding: 0 $space;
       a {
-        color: rgba($color: $green, $alpha: 0.7);
+        color: rgba($color: white, $alpha: 0.9);
         font-size: 13px;
       }
     }
