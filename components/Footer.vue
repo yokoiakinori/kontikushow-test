@@ -1,6 +1,6 @@
 <template>
   <footer>
-    <ul>
+    <ul :class="responsiveCheck">
       <li v-for="list in navigationLists" :key="list.name">
         <nuxt-link :to="list.path">{{ list.name }}</nuxt-link>
       </li>
@@ -26,20 +26,19 @@ export default {
 $space: 15px;
 footer {
   width: 100vw;
-  height: 150px;
   background-color: $green;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   flex-flow: column;
   ul {
     display: flex;
-    flex-flow: row wrap;
-    margin-bottom: 20px;
+    flex-flow: wrap;
+    margin: 30px 0 20px;
     li {
       padding: 0 $space;
       a {
-        color: white;
+        color: rgba($color: $green, $alpha: 0.7);
         font-size: 13px;
       }
     }
@@ -51,6 +50,15 @@ footer {
     font-size: 13px;
     text-align: center;
     display: inline-block;
+    margin-bottom: 45px;
+  }
+}
+
+.mobile {
+  flex-flow: column;
+  align-items: center;
+  li {
+    margin-bottom: 5px;
   }
 }
 </style>

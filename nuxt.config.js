@@ -61,7 +61,13 @@ export default {
   buildModules: [
     // Doc: https://github.com/nuxt-community/eslint-module
     '@nuxtjs/eslint-module',
+    '@nuxt/typescript-build',
+    '@nuxtjs/gtm',
   ],
+  gtm: {
+    id: 'GTM-K8XMXD2',
+    pageTracking: true,
+  },
   /*
    ** Nuxt.js modules
    */
