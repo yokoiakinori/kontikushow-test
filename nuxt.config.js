@@ -67,7 +67,6 @@ export default {
   gtm: {
     id: 'GTM-K8XMXD2',
     pageTracking: true,
-    enabled: true,
   },
   /*
    ** Nuxt.js modules
