@@ -3,7 +3,7 @@
     <nuxt-link
       :to="`${currentRoute}/${post.pagepath}`"
       class="imageLink roundsquareImage image"
-      ><img :src="`${post.image1}`" alt=""
+      ><img v-lazy="`${post.image1}`" alt=""
     /></nuxt-link>
     <nuxt-link :to="`${currentRoute}/${post.pagepath}`" class="info">
       <p class="date">{{ simpleDate }}</p>

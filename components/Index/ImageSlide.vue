@@ -6,7 +6,7 @@
         v-show="currentImage == index + 1"
         :key="index"
       >
-        <img :src="`${image.image}`" alt="" />
+        <img v-lazy="image.image" alt="" />
       </li>
     </transition-group>
     <!-- <ul class="selectDot">

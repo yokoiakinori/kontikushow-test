@@ -5,7 +5,7 @@
       class="imageLink roundsquareImage"
       :class="responsiveCheck"
     >
-      <img :src="`${post.image1}`" alt="" />
+      <img v-lazy="post.image1" alt="" />
     </nuxt-link>
     <div class="information">
       <nuxt-link :to="`/item/all/${post.pagepath}`">

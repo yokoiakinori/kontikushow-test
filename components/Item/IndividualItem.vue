@@ -3,22 +3,22 @@
     <BreadcrumbTrail :breadcrumbs="breadcrumbs" />
     <div class="contents" :class="responsiveCheck">
       <div class="images">
-        <img :src="`${currentImage}`" alt="" class="currentImage" />
+        <img :src="currentImage" alt="" class="currentImage" />
         <ul class="selectImages">
           <img
-            :src="`${currentItem.image1}`"
+            :src="currentItem.image1"
             alt=""
             class="listImage imageLink"
             @click="toggleImage('image1')"
           />
           <img
-            :src="`${currentItem.image2}`"
+            :src="currentItem.image2"
             alt=""
             class="listImage imageLink"
             @click="toggleImage('image2')"
           />
           <img
-            :src="`${currentItem.image3}`"
+            :src="currentItem.image3"
             alt=""
             class="listImage imageLink"
             @click="toggleImage('image3')"
@@ -165,12 +165,13 @@ div {
   }
   .images {
     margin-bottom: 30px;
+    height: 80vw;
   }
-  .currentImage {
-    height: 60vw;
-  }
-  .listImage {
-    height: calc(60vw / 3);
+}
+.desktop {
+  .images {
+    height: 50vw;
+    max-height: 590px;
   }
 }
 .images {
@@ -178,22 +179,20 @@ div {
   display: flex;
   flex-flow: column;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: space-between;
 }
 .currentImage {
   width: 100%;
-  height: 37vw;
-  max-height: 450px;
-  margin-bottom: 2.55vw;
+  height: 73%;
   transition-duration: 0.3s;
 }
 .listImage {
   width: calc(90% / 3);
-  height: calc(35vw / 3);
-  max-height: calc(420px / 3);
+  height: 100%;
 }
 .selectImages {
   width: 100%;
+  height: 23%;
   display: flex;
   justify-content: space-between;
 }
