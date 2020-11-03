@@ -80,7 +80,6 @@ div {
 }
 img {
   width: 100%;
-  max-width: 1100px;
   height: 100%;
   max-height: 627px;
   object-fit: cover;
