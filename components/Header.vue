@@ -12,22 +12,22 @@
         </ul>
         <div class="mobileMenuWrapper" v-else>
           <transition tag="div">
-            <font-awesome-icon
-              icon="bars"
-              style="font-size: 30px;"
+            <FontAwesome
+              :icon="'bars'"
+              :string="'faBars'"
               class="mobileMenuIcon"
-              @click="menuHideAppear"
+              @click.native="menuHideAppear"
               v-if="!mobileMenuAppear"
               key="a"
-            />
-            <font-awesome-icon
-              icon="times"
-              style="font-size: 30px;"
+            /><!-- :string属性はfonstawesomeのimport自動化のために使われる。 -->
+            <FontAwesome
+              :icon="'times'"
+              :string="'faTimes'"
               class="mobileMenuIcon"
-              @click="menuHideAppear"
+              @click.native="menuHideAppear"
               v-else
               key="b"
-            />
+            /><!-- :string属性はfonstawesomeのimport自動化のために使われる。 -->
           </transition>
         </div>
       </div>
@@ -153,6 +153,7 @@ a {
   height: 30px;
 }
 .mobileMenuIcon {
+  font-size: 30px;
   color: $green;
   position: absolute;
   top: 50%;

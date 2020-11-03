@@ -42,7 +42,11 @@
             class="tagItem"
             :to="`/item/tagsearch?tagname=${tag.tagname}`"
           >
-            <span>#</span> {{ tag.tagname }}
+            <FontAwesome
+              :icon="'hashtag'"
+              :string="'faHashtag'"
+            /><!-- :string属性はfonstawesomeのimport自動化のために使われる。 -->
+            <p>{{ tag.tagname }}</p>
           </nuxt-link>
         </div>
         <h3>商品説明</h3>
@@ -238,12 +242,17 @@ h3 {
   margin-bottom: 15px;
 }
 .tagItem {
-  margin-right: 15px;
-  display: inline-block;
-  span {
-    vertical-align: -0.15em;
-    font-size: 20px;
+  margin-right: 25px;
+  display: flex;
+  align-items: center;
+  svg {
+    font-size: 19px;
     color: rgba($green, $alpha: 0.5);
+    margin-right: 7px;
+  }
+  p {
+    display: inline-block;
+    line-height: normal;
   }
 }
 .itemInfo {
