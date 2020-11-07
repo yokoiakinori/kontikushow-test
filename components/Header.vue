@@ -124,7 +124,7 @@ a {
   font-family: 'futura', sans-serif !important;
   font-weight: normal !important;
   font-size: 17px !important;
-  font-style: italic !important;
+  font-style: oblique !important;
   color: $green;
   transition-duration: 0.3s;
   &:hover {

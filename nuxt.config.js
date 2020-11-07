@@ -77,6 +77,7 @@ export default {
     'nuxt-fontawesome',
     '@nuxtjs/markdownit',
     '@nuxtjs/axios',
+    'nuxt-webfontloader',
   ],
   styleResources: {
     scss: ['~/assets/sass/variables.scss'],
@@ -91,6 +92,11 @@ export default {
   },
   markdownit: {
     injected: true,
+  },
+  webfontloader: {
+    google: {
+      families: ['Futura'],
+    },
   },
   /*
    ** Build configuration

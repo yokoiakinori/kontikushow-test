@@ -243,6 +243,7 @@ h3 {
 }
 .tagItem {
   margin-right: 25px;
+  margin-bottom: 5px;
   display: flex;
   align-items: center;
   svg {
