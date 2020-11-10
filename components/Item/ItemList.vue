@@ -78,8 +78,9 @@ export default {
   },
   watch: {
     contents(contents) {
-      if (this.allItem - contents >= 6) {
-        for (let i = contents + 1; i < contents + 7; i++) {
+      const maxLength = 6
+      if (this.allItem - contents >= maxLength) {
+        for (let i = contents + 1; i < contents + maxLength + 1; i++) {
           this.getContents(i)
         }
       } else {

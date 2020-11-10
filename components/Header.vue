@@ -121,10 +121,10 @@ div {
   align-items: center;
 }
 a {
-  font-family: 'futura', sans-serif !important;
-  font-weight: normal !important;
+  font-family: 'futura', 'Syne', sans-serif !important;
+  font-weight: 400 !important;
   font-size: 17px !important;
-  font-style: oblique !important;
+  font-style: italic;
   color: $green;
   transition-duration: 0.3s;
   &:hover {

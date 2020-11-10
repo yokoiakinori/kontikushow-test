@@ -95,7 +95,7 @@ export default {
   },
   webfontloader: {
     google: {
-      families: ['Futura'],
+      families: ['Syne'],
     },
   },
   /*
