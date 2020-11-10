@@ -1,10 +1,10 @@
 <template>
   <div class="infinite-scroll">
-    <ul :class="responsiveCheck">
+    <transition-group tag="ul" :class="responsiveCheck">
       <li v-for="post in posts" :key="post.pagepath" class="listItem">
         <ItemPost :post="post" />
       </li>
-    </ul>
+    </transition-group>
 
     <infinite-loading
       ref="infiniteLoading"
