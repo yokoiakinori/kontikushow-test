@@ -36,8 +36,8 @@ export default {
     addtoContents() {
       setTimeout(() => {
         if (this.contents < this.allItem) {
-          if (this.allItem - this.contents > 6) {
-            this.contents += 6
+          if (this.allItem - this.contents > this.pagesize) {
+            this.contents += this.pagesize
           } else {
             this.contents += this.allItem - this.contents
           }
