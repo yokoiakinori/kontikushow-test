@@ -47,7 +47,11 @@ p {
 img {
   object-fit: cover;
 }
-
+.flexCenter{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .pageWrapper {
   width: 80vw;
   max-width: $max-width;

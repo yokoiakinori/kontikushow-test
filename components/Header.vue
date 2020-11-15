@@ -121,7 +121,7 @@ div {
   align-items: center;
 }
 a {
-  font-family: 'futura', 'Syne', sans-serif !important;
+  font-family: 'futura', sans-serif !important;
   font-weight: 400 !important;
   font-size: 17px !important;
   font-style: italic;

@@ -9,9 +9,6 @@
         <img :src="image.image" alt="" />
       </li>
     </transition-group>
-    <!-- <ul class="selectDot">
-      <li v-for="dot in images" :key="dot.id" @click="setImage(dot.id)">●</li>
-    </ul> -->
   </div>
 </template>
 
@@ -82,20 +79,7 @@ img {
   width: 100%;
   height: 100%;
   max-height: 627px;
-  object-fit: cover;
   margin: auto;
   z-index: 2;
-}
-.selectDot {
-  display: flex;
-  justify-content: center;
-  margin-top: -40px;
-  z-index: 10;
-  li {
-    font-size: 12px;
-    color: white;
-    opacity: 0.5;
-    margin: 7px;
-  }
 }
 </style>

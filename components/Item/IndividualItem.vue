@@ -1,9 +1,21 @@
 <template>
-  <div class="pageMargin">
+  <div class="wrapper pageMargin">
     <BreadcrumbTrail :breadcrumbs="breadcrumbs" />
+    <transition>
+      <ExpansionImage
+        v-show="expansionimageCheck"
+        @hide="appearExpansionImage()"
+        :images="images"
+      />
+    </transition>
     <div class="contents" :class="responsiveCheck">
       <div class="images">
-        <img :src="currentImage" alt="" class="currentImage" />
+        <img
+          :src="currentImage"
+          alt=""
+          class="currentImage"
+          @click="appearExpansionImage()"
+        />
         <ul class="selectImages">
           <img
             :src="currentItem.image1"
@@ -66,11 +78,13 @@ export default {
       title: this.titleString,
     }
   },
+  // expansionimageCheckは「画像拡大」用のモーダルコンポーネント表示非表示のフラグ
   data() {
     return {
       currentCategory: Object,
       currentItem: Object,
       currentImage: String,
+      expansionimageCheck: false,
     }
   },
   props: {
@@ -121,6 +135,13 @@ export default {
         }
       }
     },
+    images() {
+      return [
+        this.currentItem.image1,
+        this.currentItem.image2,
+        this.currentItem.image3,
+      ]
+    },
   },
   methods: {
     toggleImage(number) {
@@ -131,6 +152,9 @@ export default {
       } else if (number === 'image3') {
         this.currentImage = this.currentItem.image3
       }
+    },
+    appearExpansionImage() {
+      this.expansionimageCheck = !this.expansionimageCheck
     },
   },
   created() {
@@ -152,7 +176,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-div {
+.wrapper {
   width: 85vw;
   max-width: 1000px;
 }
