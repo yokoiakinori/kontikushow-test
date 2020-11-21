@@ -1,6 +1,9 @@
 <template>
   <div class="popularItem" :class="responsiveCheck">
-    <h2>人気の商品</h2>
+    <div class="componentHeader">
+      <PopularItemIcon class="icon" />
+      <h2>人気の商品</h2>
+    </div>
     <ul>
       <PIpost
         v-for="post in posts"
@@ -36,10 +39,11 @@ export default {
   flex-flow: column;
   align-items: center;
   margin-top: 30px !important;
-  h2 {
+  .componentHeader {
     text-align: center;
     margin-bottom: 5px;
     width: 100%;
+    justify-content: center;
   }
   ul {
     padding: 0;
@@ -61,12 +65,6 @@ export default {
     width: 80%;
     justify-content: space-between;
   }
-}
-h2 {
-  font-size: 20px;
-  color: $green;
-  width: 20%;
-  text-align: left;
 }
 .post {
   margin-right: 45px;

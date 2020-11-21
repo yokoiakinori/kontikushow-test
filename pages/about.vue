@@ -1,21 +1,22 @@
 <template>
   <div class="pageMargin pageWrapper top">
     <BreadcrumbTrail :breadcrumbs="breadcrumbs" />
-    <img :src="`${posts[0].image}`" alt="" class="MainImage" />
+    <img :src="`${about[0].image}`" alt="" class="MainImage" />
     <div class="message">
-      <div v-html="$md.render(posts[0].content)"></div>
+      <div v-html="$md.render(about[0].content)"></div>
     </div>
-    <div class="profile" :class="{ mobile: mobileCheck }">
-      <img :src="`${posts[0].thumbnail}`" alt="" />
+    <div class="profile" :class="responsiveCheck">
+      <img :src="`${about[0].thumbnail}`" alt="" />
       <div class="information">
         <h3>プロフィール</h3>
-        <div v-html="$md.render(posts[0].profile)"></div>
+        <div v-html="$md.render(about[0].profile)"></div>
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import { mapState } from 'vuex'
 export default {
   head() {
     return {
@@ -36,34 +37,12 @@ export default {
     }
   },
   computed: {
-    posts() {
-      return this.$store.state.about
-    },
-    mobileCheck() {
-      if (this.width > 380) {
-        return false
-      } else {
-        return true
-      }
-    },
     breadcrumbs() {
       return {
         data: [{ name: 'TOP', path: '/' }, { name: 'ABOUT' }],
       }
     },
-  },
-  methods: {
-    handleReisize() {
-      if (process.client) {
-        this.width = window.innerWidth
-      }
-    },
-  },
-  mounted() {
-    window.addEventListener('resize', this.handleReisize)
-  },
-  created() {
-    this.handleReisize()
+    ...mapState(['about']),
   },
 }
 </script>

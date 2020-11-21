@@ -39,7 +39,7 @@ export default {
     async autoSlide() {
       const wait = (ms) =>
         new Promise((resolve) => setTimeout(() => resolve(), ms))
-      await wait(6000)
+      await wait(7000)
       if (this.currentImage > this.images.length - 1) {
         this.currentImage = 1
       } else {
@@ -72,7 +72,6 @@ div {
     position: absolute;
     top: 0;
     left: 0;
-    background-color: rgba($color: $yellow, $alpha: 0.5);
   }
 }
 img {

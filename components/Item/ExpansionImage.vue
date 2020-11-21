@@ -1,6 +1,9 @@
 <template>
   <div class="modalBack flexCenter" @click="hideComponent()">
     <div class="window roundsquareImage" @click="stopHide()">
+      <div class="hide">
+        <FontAwesome :icon="'times'" @click.native="hideComponent()" />
+      </div>
       <div class="operationTools">
         <div @click="selectImage(-1)"><p>◀︎</p></div>
         <div @click="selectImage(1)"><p>▶︎</p></div>
@@ -84,6 +87,14 @@ export default {
     }
   }
 }
+.hide {
+  position: absolute;
+  top: 540px;
+  left: 770px;
+  z-index: 40;
+  color: rgba($color: $green, $alpha: 0.5);
+  font-size: 60px;
+}
 .operationTools {
   padding: 30px;
   width: 100%;
@@ -93,23 +104,22 @@ export default {
   div {
     opacity: 0;
     transition-duration: 0.2s;
-    width: 15%;
+    width: 12%;
     height: 100%;
-    background-color: rgba($color: #fff, $alpha: 0.4);
+    background-color: $green;
     z-index: 30;
     display: flex;
     align-items: center;
     justify-content: center;
     &:hover {
-      opacity: 1;
+      opacity: 0.3;
       transition-duration: 0.2s;
     }
     p {
-      color: black;
+      color: white;
       z-index: 31;
-      font-size: 50px;
+      font-size: 40px;
       vertical-align: middle;
-      opacity: 0.2;
     }
   }
 }

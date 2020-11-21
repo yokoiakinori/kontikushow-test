@@ -4,7 +4,7 @@ export const state = () => ({
   popularItem: [],
   news: [],
   about: [],
-  questionAnswer: [],
+  questionAnswers: [],
 })
 
 export const mutations = {
@@ -28,7 +28,7 @@ export const mutations = {
     }
   },
   setFAQ(state, list) {
-    state.questionAnswer = list.sort(function (a, b) {
+    state.questionAnswers = list.sort(function (a, b) {
       return a['created-date'] < b['created-date'] ? 1 : -1
     })
   },

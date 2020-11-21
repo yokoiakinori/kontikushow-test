@@ -3,7 +3,11 @@
   <div class="pageMargin newsWrapper">
     <BreadcrumbTrail :breadcrumbs="breadcrumbs" />
     <ul class="list">
-      <li v-for="(post, index) in posts" :key="index" :class="responsiveCheck">
+      <li
+        v-for="(post, index) in allNews"
+        :key="index"
+        :class="responsiveCheck"
+      >
         <transition
           ><NewsPost :post="post" :index="index"></NewsPost
         ></transition>
@@ -13,6 +17,7 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 export default {
   head() {
     return {
@@ -23,14 +28,12 @@ export default {
     return {}
   },
   computed: {
-    posts() {
-      return this.$store.getters.allNews
-    },
     breadcrumbs() {
       return {
         data: [{ name: 'TOP', path: '/' }, { name: 'NEWS' }],
       }
     },
+    ...mapGetters(['allNews']),
   },
 }
 </script>

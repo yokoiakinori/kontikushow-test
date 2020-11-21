@@ -2,14 +2,18 @@
   <div class="pageMargin pageWrapper">
     <BreadcrumbTrail :breadcrumbs="breadcrumbs" />
     <ul>
-      <li v-for="post in posts" :key="post.question">
-        <FaqPost :post="post" />
+      <li
+        v-for="questionAnswer in questionAnswers"
+        :key="questionAnswer.question"
+      >
+        <FaqPost :post="questionAnswer" />
       </li>
     </ul>
   </div>
 </template>
 
 <script>
+import { mapState } from 'vuex'
 export default {
   head() {
     return {
@@ -22,9 +26,7 @@ export default {
         data: [{ name: 'TOP', path: '/' }, { name: 'よくある質問' }],
       }
     },
-    posts() {
-      return this.$store.state.questionAnswer
-    },
+    ...mapState(['questionAnswers']),
   },
 }
 </script>

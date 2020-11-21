@@ -1,6 +1,9 @@
 <template>
   <div class="indexNews" :class="responsiveCheck">
-    <h2>ニュース</h2>
+    <div class="componentHeader">
+      <NewsIcon class="icon" />
+      <h2>ニュース</h2>
+    </div>
     <div class="contents">
       <ul>
         <LNpost
@@ -37,10 +40,11 @@ export default {
   flex-flow: column;
   align-items: center;
   margin-top: 30px !important;
-  h2 {
+  .componentHeader {
     text-align: center;
     margin-bottom: 5px;
     width: 100%;
+    justify-content: center;
   }
   ul {
     padding: 0;
@@ -50,9 +54,6 @@ export default {
   width: 100%;
   display: flex;
   margin-top: 70px;
-}
-h2 {
-  width: 20%;
 }
 .contents {
   width: 80%;

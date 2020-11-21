@@ -83,6 +83,19 @@ img {
   }
 }
 
+.componentHeader {
+  width: 20%;
+  height: 30px;
+  display: flex;
+  align-items: center;
+}
+
+.icon {
+  width: 35px;
+  margin-right: 13px;
+  fill: $green;
+}
+
 .v-enter-active,
 .v-leave-active {
   transition: opacity 0.5s;
