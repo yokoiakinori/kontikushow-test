@@ -3,7 +3,7 @@
     <div class="space" v-show="!mobileCheck"></div>
     <div class="headerBackground" :class="{ mobileHeader: !mobileCheck }">
       <div class="header">
-        <Logo></Logo>
+        <nuxt-link to="/"><Logo class="KontikushowLogo"></Logo></nuxt-link>
         <ul v-if="mobileCheck" class="Navigation">
           <li v-for="navigation in navigations" :key="navigation.id">
             <nuxt-link :to="navigation.path">{{ navigation.name }}</nuxt-link>
@@ -92,6 +92,29 @@ export default {
 <style lang="scss" scoped>
 div {
   width: 100%;
+}
+.KontikushowLogo {
+  animation: 0.5s appear;
+  margin: 0;
+  margin-left: 15px;
+  width: 10vw;
+  height: 10vw;
+  max-width: 120px;
+  max-height: 120px;
+  min-width: 80px;
+  min-height: 80px;
+  fill: $green;
+  transition-duration: 0.3s;
+  &:hover {
+    fill: rgba($green, 0.5);
+    transition-duration: 0.3s;
+  }
+}
+
+@keyframes appear {
+  0% {
+    opacity: 0;
+  }
 }
 .headerBackground {
   width: 100%;

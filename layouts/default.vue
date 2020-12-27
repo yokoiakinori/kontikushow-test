@@ -1,5 +1,6 @@
 <template>
   <div>
+    <Loading :loadingActive="loadingisActive" />
     <Header />
     <Nuxt />
     <Footer />
@@ -12,6 +13,7 @@ export default {
   data() {
     return {
       width: Number,
+      loadingisActive: true,
     }
   },
   computed: {
@@ -29,9 +31,18 @@ export default {
         this.width = window.innerWidth
       }
     },
+    async loadingFinish() {
+      const wait = (ms) =>
+        new Promise((resolve) => setTimeout(() => resolve(), ms))
+      await wait(1000)
+      this.loadingisActive = false
+    },
   },
   mounted() {
     window.addEventListener('resize', this.handleReisize)
+    this.$nextTick(function () {
+      this.loadingFinish()
+    })
   },
   created() {
     this.handleReisize()

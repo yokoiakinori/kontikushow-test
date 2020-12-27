@@ -1,9 +1,9 @@
 <template>
   <div class="container">
-    <ImageSlide></ImageSlide>
+    <ImageSlide />
     <div class="content">
-      <LatestNews></LatestNews>
-      <PopularItem></PopularItem>
+      <LatestNews />
+      <PopularItem />
     </div>
   </div>
 </template>
