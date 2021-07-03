@@ -6,7 +6,9 @@
         v-show="currentImage == index + 1"
         :key="index"
       >
-        <img :src="image.image" alt="" />
+        <nuxt-link :to="image.pagepath"
+          ><img :src="image.image" alt=""
+        /></nuxt-link>
       </li>
     </transition-group>
     <ul class="flexRowCenter selectButton">
