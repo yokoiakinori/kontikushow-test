@@ -9,6 +9,17 @@
         <img :src="image.image" alt="" />
       </li>
     </transition-group>
+    <ul class="flexRowCenter selectButton">
+      <li
+        v-for="(image, index) in images"
+        :key="index"
+        class="margin1_side button"
+        :class="{ active: currentImage == index + 1 }"
+        @click="setImage(index + 1)"
+      >
+        ●
+      </li>
+    </ul>
   </div>
 </template>
 
@@ -24,27 +35,9 @@ export default {
       return this.$store.state.slideImage
     },
   },
-  watch: {
-    currentImage() {
-      this.autoSlide()
-    },
-  },
-  mounted() {
-    this.autoSlide()
-  },
   methods: {
     setImage(id) {
       this.currentImage = id
-    },
-    async autoSlide() {
-      const wait = (ms) =>
-        new Promise((resolve) => setTimeout(() => resolve(), ms))
-      await wait(7000)
-      if (this.currentImage > this.images.length - 1) {
-        this.currentImage = 1
-      } else {
-        this.currentImage++
-      }
     },
   },
 }
@@ -58,6 +51,7 @@ div {
   display: flex;
   flex-flow: column;
   align-items: center;
+  position: relative;
 }
 .images {
   width: 100%;
@@ -80,5 +74,19 @@ img {
   max-height: 627px;
   margin: auto;
   z-index: 2;
+}
+.selectButton {
+  z-index: 3;
+  position: absolute;
+  bottom: 30px;
+  li {
+    cursor: pointer;
+  }
+}
+.button {
+  color: rgba($color: #fff, $alpha: 0.6);
+}
+.active {
+  color: rgba($color: $yellow, $alpha: 0.6);
 }
 </style>

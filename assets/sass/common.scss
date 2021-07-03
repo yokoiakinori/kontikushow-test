@@ -1,3 +1,9 @@
+@import 'parts/flex.scss';
+@import 'parts/buttonDesign.scss';
+@import 'parts/margin.scss';
+@import 'parts/padding.scss';
+@import 'parts/modal.scss';
+
 * {
   margin: 0;
   padding: 0;
@@ -32,13 +38,14 @@ h3 {
   font-size: 18px;
   color: $green;
 }
-h4{
+
+h4 {
   font-size: 16px;
 }
 
 p {
   font-family: 'Hiragino Sans' !important;
-  font-weight: 500 ;
+  font-weight: 500;
   font-size: 15px;
   line-height: 28px;
   text-align: left;
@@ -47,11 +54,13 @@ p {
 img {
   object-fit: cover;
 }
-.flexCenter{
+
+.flexCenter {
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
 .pageWrapper {
   width: 80vw;
   max-width: $max-width;
@@ -115,14 +124,17 @@ img {
 
 .imageLink {
   transition-duration: 0.3s;
-  overflow:hidden;
+  overflow: hidden;
+
   &:hover {
     opacity: 0.7;
     transition-duration: 0.3s;
   }
-  img{
+
+  img {
     transition-duration: 0.3s;
-    &:hover{
+
+    &:hover {
       transform: scale(1.1);
       transition-duration: 0.3s;
     }

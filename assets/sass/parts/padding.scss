@@ -1,0 +1,105 @@
+$standardValue:10px;
+$magnification1:1;
+$magnification1-5:1.5;
+$magnification2:2;
+$magnification3:3;
+$magnification4:4;
+@function sizeAdjustment($magnification){
+    @return $standardValue*$magnification
+};
+
+.padding1{
+    padding: sizeAdjustment($magnification1);
+};
+.padding1_side{
+    padding: 0 sizeAdjustment($magnification1);
+};
+.padding1_vertical{
+    padding:sizeAdjustment($magnification1) 0;
+};
+.padding1_top{
+    padding-top: sizeAdjustment($magnification1);
+};
+.padding1_bottom{
+    padding-bottom: sizeAdjustment($magnification1);
+};
+.padding1_left{
+    padding-left: sizeAdjustment($magnification1);
+};
+.padding1_right{
+    padding-right: sizeAdjustment($magnification1);
+};
+
+
+.padding1-5{
+    padding: sizeAdjustment($magnification1-5);
+};
+.padding1-5_side{
+    padding: 0 sizeAdjustment($magnification1-5);
+};
+.padding1-5_vertical{
+    padding:sizeAdjustment($magnification1-5) 0;
+};
+.padding1-5_top{
+    padding-top: sizeAdjustment($magnification1-5);
+};
+.padding1-5_bottom{
+    padding-bottom: sizeAdjustment($magnification1-5);
+};
+.padding1-5_left{
+    padding-left: sizeAdjustment($magnification1-5);
+};
+.padding1-5_right{
+    padding-right: sizeAdjustment($magnification1-5);
+};
+
+
+.padding2{
+    padding: sizeAdjustment($magnification2);
+};
+.padding2_side{
+    padding: 0 sizeAdjustment($magnification2);
+};
+.padding2_vertical{
+    padding:sizeAdjustment($magnification2) 0;
+};
+.padding2_top{
+    padding-top: sizeAdjustment($magnification2);
+};
+.padding2_bottom{
+    padding-bottom: sizeAdjustment($magnification2);
+};
+.padding2_left{
+    padding-left: sizeAdjustment($magnification2);
+};
+.padding2_right{
+    padding-right: sizeAdjustment($magnification2);
+};
+
+
+.padding3{
+    padding: sizeAdjustment($magnification3);
+};
+.padding3_side{
+    padding: 0 sizeAdjustment($magnification3);
+};
+.padding3_vertical{
+    padding:sizeAdjustment($magnification3) 0;
+};
+.padding3_top{
+    padding-top: sizeAdjustment($magnification3);
+};
+.padding3_bottom{
+    padding-bottom: sizeAdjustment($magnification3);
+};
+.padding3_left{
+    padding-left: sizeAdjustment($magnification3);
+};
+.padding3_right{
+    padding-right: sizeAdjustment($magnification3);
+};
+
+
+.padding_side2_vertical1{
+    padding: sizeAdjustment($magnification1) sizeAdjustment($magnification2);
+};

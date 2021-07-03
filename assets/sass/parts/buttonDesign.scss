@@ -1,0 +1,34 @@
+@charset "UTF-8";
+$maincolor:#282D6F;
+
+.roundSquareShadow{
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 2px 2px 3px rgba($maincolor, 0.15);
+}
+
+.solidSquareButton{
+    padding: 10px;
+    border: solid 1px rgba($color: $maincolor, $alpha: 0.7);
+}
+
+.capsuleButton {
+	border: solid 1.5px $maincolor;
+	border-radius: 40px;
+    padding: 10px 40px;
+	font-weight: bold;
+	color: $maincolor;
+    transition-duration: 0.3s;
+    cursor: pointer;
+
+	&:hover {
+		transition-duration: 0.3s;
+		background-color: $maincolor;
+		color: white;
+
+		i {
+			color: white;
+			transition-duration: 0.3s;
+		}
+	}
+}
