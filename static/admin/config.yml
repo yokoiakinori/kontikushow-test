@@ -18,6 +18,7 @@ collections:
       preview: false
     fields:
       - { label: 'スライド画像', name: 'image', widget: 'image' }
+      - { label: '遷移先', name: 'pagepath', widget: 'string', default: '/' }
   - name: 'popularitems'
     label: 'PopularItems'
     format: 'json'
