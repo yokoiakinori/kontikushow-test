@@ -20,6 +20,7 @@ export default {
 
 <style lang="scss" scoped>
 ul {
+  width: 100%;
   display: flex;
   margin-bottom: 45px;
   flex-wrap: wrap;

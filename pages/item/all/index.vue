@@ -31,6 +31,6 @@ export default {
 <style lang="scss" scoped>
 div {
   justify-content: flex-start;
-  align-items: flex-start;
+  align-items: center;
 }
 </style>

@@ -2,7 +2,7 @@
   <!-- check for common.scss -->
   <div class="pageMargin pageWrapper infinite-scroll">
     <BreadcrumbTrail :breadcrumbs="breadcrumbs" />
-    <CategoryNavigation />
+    <CategoryNavigation :currentCategory="currentCategory" />
     <ItemList :categoryParam="currentCategory.name" />
   </div>
 </template>
@@ -53,6 +53,6 @@ export default {
 <style lang="scss" scoped>
 div {
   justify-content: flex-start;
-  align-items: flex-start;
+  align-items: center;
 }
 </style>
