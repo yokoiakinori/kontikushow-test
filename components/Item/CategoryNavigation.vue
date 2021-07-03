@@ -1,5 +1,5 @@
 <template>
-  <ul class="flexRowCenter margin4_bottom">
+  <ul class="margin4_bottom flexRowCenter" :class="responsiveCheck">
     <li
       v-for="category in categories"
       :key="category.name"
@@ -43,5 +43,12 @@ a {
 .active {
   padding-bottom: 7px;
   border-bottom: solid 2px $green;
+}
+.mobile {
+  flex-flow: column;
+  align-items: center;
+  li {
+    margin-bottom: 15px;
+  }
 }
 </style>
